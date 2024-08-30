@@ -34,8 +34,6 @@ userApp.post("/user", expressAsyncHandler(async(req, res) => {
 
     //replace plain password with hashed password in newUser
     newUser.password = hashedpassword;
-    //add products property
-    newUser.products = []
     //save user
     await usersCollection.insertOne(newUser)
     //send res
