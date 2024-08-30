@@ -14,11 +14,11 @@ function Header() {
 
   return (
     <div className="header">
-      <div className="logo">
+      <div className="logo-container">
         <Link to="/">
           <img src="src/assets/images/vaidyavan-logo.png" alt="Logo Unavailable currently" className='logo-img' />
         </Link>
-        <h1 className="m-3" style={{ color: 'black' }}>VaidyaVan</h1>
+        <h1 className="brand-name">VaidyaVan</h1>
       </div>
       <nav className="navbar">
         <button className="navbar-toggler" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -32,7 +32,7 @@ function Header() {
           </li>
           <li className="nav-item">
             <Link to="learn" className="nav-link">
-              <PiPlantDuotone /> Learn
+              <PiPlantDuotone /> FloraVerse
             </Link>
           </li>
           <li className="nav-item">

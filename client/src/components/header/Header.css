@@ -1,24 +1,28 @@
 .header {
   display: flex;
-  justify-content: space-between;
-  background-color: #cfe2d9;
-  padding: 10px;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+background-color: #cfe2d9;
+  border-bottom: 2px solid #ddd;
 }
 
-.logo {
+.logo-container {
   display: flex;
   align-items: center;
 }
 
 .logo-img {
-  width: 150px;
-  height: 150px;
+  height: 50px;
+  width: auto;
+  margin-right: 15px;
 }
 
-.logo-title {
-  color: black;
-  margin-left: 15px;
+.brand-name {
+  font-family: 'Playfair Display', serif; /* Ensure this font is imported in your HTML or CSS */
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0;
 }
 
 .navbar {
@@ -28,26 +32,42 @@
 
 .navbar-toggler {
   display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+.nav-links.open {
+  display: block;
 }
 
 .nav-item {
-  margin: 0 10px;
+  margin-left: 20px;
 }
 
 .nav-link {
-  color: #434343;
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 500;
+  color: #34495e;
+  display: flex;
+  align-items: center;
 }
 
-/* Responsive design */
+.nav-link svg {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .navbar-toggler {
     display: block;
@@ -56,52 +76,32 @@
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 250px; /* Set a fixed width for the dropdown menu */
-    background-color: #cfe2d9;
+    background-color: #f4f4f4;
     position: absolute;
-    top: 60px; /* Adjust based on your header height */
-    left: 50%;
-    transform: translateX(-50%); /* Center align dropdown */
-    z-index: 1000;
-    border-radius: 5px; /* Optional: Add rounded corners for a better look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for a better appearance */
-  }
-  
-  .nav-links.open {
-    display: flex;
-  }
-  
-  .nav-links li {
-    display: flex;
-    align-items: center;
-    /* Blue background for the icons */
-    padding: 12px; /* Adjust padding to fit icons and text */
-    color: black; /* White text color */
-    /* Optional: Add a border between items */
-  }
-  
-  .nav-links li:last-child {
-    border-bottom: none; /* Remove border from the last item */
-  }
-  
-  .nav-link {
-    display: flex;
-    align-items: center;
-    color: #ffffff; /* White text color */
-    text-decoration: none;
-  }
-  
-  .nav-link svg {
-    margin-right: 10px; /* Space between icon and text */
-  }
-  
-
-  .nav-links.open {
-    display: flex;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
   }
 
   .nav-item {
-    margin: 15px 0;
-    text-align: center;
+    margin: 10px 0;
+    margin-left: 0;
+    padding: 10px 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
   }
 }
+
+
