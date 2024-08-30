@@ -18,7 +18,7 @@ function Header() {
         <Link to="/">
           <img src="src/assets/images/vaidyavan-logo.png" alt="Logo Unavailable currently" className='logo-img' />
         </Link>
-        <h1 className="logo-title">VaidyaVan</h1>
+        <h1 className="m-3" style={{ color: 'black' }}>VaidyaVan</h1>
       </div>
       <nav className="navbar">
         <button className="navbar-toggler" onClick={() => setIsMenuOpen(!isMenuOpen)}>
