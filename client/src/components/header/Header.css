@@ -1,0 +1,107 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #cfe2d9;
+  padding: 10px;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 150px;
+  height: 150px;
+}
+
+.logo-title {
+  color: black;
+  margin-left: 15px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.nav-link {
+  color: #434343;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 250px; /* Set a fixed width for the dropdown menu */
+    background-color: #cfe2d9;
+    position: absolute;
+    top: 60px; /* Adjust based on your header height */
+    left: 50%;
+    transform: translateX(-50%); /* Center align dropdown */
+    z-index: 1000;
+    border-radius: 5px; /* Optional: Add rounded corners for a better look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for a better appearance */
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  .nav-links li {
+    display: flex;
+    align-items: center;
+    /* Blue background for the icons */
+    padding: 12px; /* Adjust padding to fit icons and text */
+    color: black; /* White text color */
+    /* Optional: Add a border between items */
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+  }
+  
+  .nav-link svg {
+    margin-right: 10px; /* Space between icon and text */
+  }
+  
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 15px 0;
+    text-align: center;
+  }
+}
