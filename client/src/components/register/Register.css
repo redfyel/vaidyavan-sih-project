@@ -1,0 +1,12 @@
+.form-control {
+    border: 1px solid #ccc; /* Light grey border */
+  }
+  
+  .btn {
+    background-color: #434343; /* Dark green color for submit button */
+    color: #fff; /* White text for submit button */
+  }
+  .light-green-bg {
+    background-color: #cfe2d9; /* Light green color */
+    padding: 20px; /* Optional padding for better spacing */
+  }
