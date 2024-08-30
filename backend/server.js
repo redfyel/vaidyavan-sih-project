@@ -11,6 +11,7 @@ require('dotenv').config() //process.env.PORT
 //import MongoClient
 const {MongoClient} = require('mongodb');
 
+
 //create MongoClient Object
 let mClient = new MongoClient(process.env.DB_URL)
 //connect to mongodb server
@@ -22,9 +23,12 @@ console.log("db connection success")
 const fsddb = connectionObj.db('plants');
 //connect to a collection
 const usersCollection = fsddb.collection('users')
+const plantsCollection = fsddb.collection('learn_plants')
 
 //share collection obj to APIs
 app.set('usersCollection', usersCollection);
+app.set('plantsCollection', plantsCollection);
+
 
 //assign port number to http server of express app
 app.listen(process.env.PORT, ()=>console.log("http server started on port 4000"))
@@ -33,9 +37,12 @@ catch(err=>console.log("error in db connection", err))
 
 //import userApp
 const userApp =  require('./APIs/userAPI')
+const plantApp = require('./APIs/plantAPI')
 
-//if path starts with /user-api, thnen forward request to userApp
+
 app.use('/user-api', userApp)
+app.use('/plant-api', plantApp)
+
 
 
 //handling invalid path
