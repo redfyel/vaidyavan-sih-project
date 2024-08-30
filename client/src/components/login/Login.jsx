@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import './Login.css'
 
 function Login() {
   let { loginUser, userLoginStatus,err } = useContext(UserLoginContext);
@@ -21,10 +22,10 @@ function Login() {
   }, [userLoginStatus]);
 
   return (
-    <div>
+    <div className="w-50 mx-auto">
       <p className="display-3 text-center mt-4 lead">Login</p>
       <div className="row light-green-bg">
-        <div className="col-11 col-sm-10 col-md-6 mx-auto forrm">
+        <div className="col-11 col-sm-10 col-md-6 mx-auto w-75">
           <form className=" mt-5 p-3 " onSubmit={handleSubmit(userLogin)}>
 
             {/* other error messages */}
@@ -60,7 +61,7 @@ function Login() {
                 <p className="lead text-danger">*This field is required</p>
               )}
             </div>
-            <button type="submit" className="btn text-white rounded-pill fs-5 border but ">
+            <button type="submit" className="btn login-button">
               Login
             </button>
           </form>

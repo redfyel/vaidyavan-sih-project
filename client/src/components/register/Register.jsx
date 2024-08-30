@@ -37,17 +37,17 @@ function Register() {
   }
 
   return (
-    <div>
+    <div className="w-50 mx-auto">
       <p className="display-3 text-center mt-4 lead">User Registration</p>
 
       {/* Registration form */}
       <div className="row light-green-bg">
-        <div className="col-11 col-sm-10 col-md-6 mx-auto forrm">
+        <div className="col-11 col-sm-10 col-md-6 mx-auto w-75">
           {/* Other error message */}
           {err.length !== 0 && <p className="fs-2 text-danger">{err}</p>}
 
           <form
-            className="mx-auto mt-5 p-3 "
+            className="mx-auto mt-5 p-3"
             onSubmit={handleSubmit(onUserRegister)}
           >
             {/* username */}
@@ -139,7 +139,7 @@ function Register() {
             {/* submit button */}
             <button
               type="submit"
-              className="btn text-light but text-center border"
+              className="btn register-button"
             >
               Submit
             </button>

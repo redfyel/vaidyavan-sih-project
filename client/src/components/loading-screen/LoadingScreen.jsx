@@ -1,4 +1,3 @@
-// LoadingScreen.js
 import React, { useEffect } from 'react';
 import './LoadingScreen.css';
 import { useNavigate } from 'react-router-dom';
@@ -16,8 +15,9 @@ function LoadingScreen() {
 
   return (
     <div className="loading-screen">
-      <h2>Taking you to the garden of healing...</h2>
-      <div className="spinner"></div>
+      <div className="logo-spinner"></div>
+      <h2 className="loading-text">Taking you to the garden of healing...</h2>
+      
     </div>
   );
 }

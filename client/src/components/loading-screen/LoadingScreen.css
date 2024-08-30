@@ -1,26 +1,27 @@
-/* LoadingScreen.css */
 .loading-screen {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: #f4f6f8;
+  }
+  
+  .loading-text {
+    font-family: 'Playfair Display', serif; 
+    font-size: 2rem;
+    color: #235c40;
+    margin-bottom: 20px;
     text-align: center;
   }
   
-  .loading-screen h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #2c3e50;
-  }
-  
-  .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    border-top: 4px solid #2c3e50;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
+  .logo-spinner {
+    width: 100px;
+    height: 100px;
+    background-image: url('/src/assets/images/vaidyavan-logo.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: spin 2s linear infinite;
   }
   
   @keyframes spin {
