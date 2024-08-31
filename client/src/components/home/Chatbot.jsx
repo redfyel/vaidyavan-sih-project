@@ -30,17 +30,20 @@ const Chatbot = () => {
     input = input.toLowerCase();
 
     if (input.includes("hello") || input.includes("hi")) {
-      return "Hello! How can I help you?";
+        return "Hello! I'm Oshidhi.🌱 How can I help you?";
     } else if (input.includes("help")) {
-      return "Sure, I'm here to help! What do you need assistance with?";
+        return "Sure, I'm here to help! What do you need assistance with?";
     } else if (input.includes("herbs") || input.includes("plants")) {
-      return "I can provide information on various herbs and plants. Which one would you like to learn about?";
+        return "I can provide information on various herbs and plants. Which one would you like to learn about?";
+    } else if (input.includes("disease") || input.includes("symptoms")) {
+        return "If you describe the symptoms you're seeing, I can suggest possible remedies and plants that might help.";
     } else if (input.includes("thank you")) {
-      return "You're welcome!";
+        return "You're welcome!";
     } else {
-      return "Sorry, I didn't understand that. Can you please rephrase?";
+        return "Sorry, I didn't understand that. Can you please rephrase?";
     }
-  };
+};
+
 
   const toggleChatbot = () => {
     setIsOpen(!isOpen);

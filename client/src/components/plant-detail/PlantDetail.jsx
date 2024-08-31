@@ -21,12 +21,7 @@ function PlantDetail({ plant, onClose }) {
     } else {
       console.log('Web Speech API is not supported.');
     }
-    const testAudio = () => {
-      const utterance = new SpeechSynthesisUtterance('Hello, this is a test.');
-      window.speechSynthesis.speak(utterance);
-    };
-    
-    testAudio();
+
     
     
   };
@@ -40,7 +35,7 @@ function PlantDetail({ plant, onClose }) {
       bn: `বৈজ্ঞানিক নাম: ${plant.scientificName}, গুরুত্বপূর্ণ অংশ: ${plant.importantPart}, পার্শ্বপ্রতিক্রিয়া: ${plant.sideEffects}, কীভাবে ব্যবহার করবেন: ${plant.howToUse.join(', ')}, রোগ: ${plant.diseases.join(', ')}`,
       te: `శాస్త్రవేత్త పేరు: ${plant.scientificName}, ముఖ్యమైన భాగం: ${plant.importantPart}, సైడ్ ఎఫెక్ట్స్: ${plant.sideEffects}, ఎలా ఉపయోగించాలో: ${plant.howToUse.join(', ')}, జబ్బులు: ${plant.diseases.join(', ')}`,
       ta: `வானி பெயர்: ${plant.scientificName}, முக்கியமான பகுதி: ${plant.importantPart}, புறவாய்வு விளைவுகள்: ${plant.sideEffects}, எப்படி பயன்படுத்துவது: ${plant.howToUse.join(', ')}, நோய்கள்: ${plant.diseases.join(', ')}`,
-      // Add more languages and translations as needed
+
     };
     return translations[language] || translations.en;
   };
