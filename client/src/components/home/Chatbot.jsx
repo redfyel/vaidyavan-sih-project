@@ -26,7 +26,7 @@ const Chatbot = () => {
   const generateResponse = (userInput) => {
     // Basic dynamic response logic
     const lowerInput = userInput.toLowerCase();
-    if (lowerInput.includes('hello')) return 'Hello! How can I help you today?';
+    if (lowerInput.includes('hello')) return 'Hello! I\'m Oshidhi.🌱 How can I help you today?';
     if (lowerInput.includes('plant care')) return 'Here are some tips for plant care...';
     return 'Sorry, I didn\'t understand that. Could you please provide more details?';
   };
@@ -34,7 +34,7 @@ const Chatbot = () => {
   return (
     <div className="chatbot-container">
       <div className="chatbot-header">
-        Chatbot
+        Oshidhi
       </div>
       <div className="chatbot-messages">
         {messages.map((msg, index) => (
