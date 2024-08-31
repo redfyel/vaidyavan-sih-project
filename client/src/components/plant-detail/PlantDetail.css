@@ -97,3 +97,14 @@
 .plant-detail-guidelines:hover {
   background-color: #84e497;
 }
+/* Styles for when PlantDetail is active */
+.white-background {
+  background-color: white;
+  height: 100vh; /* Full viewport height to cover the entire screen */
+  overflow: hidden; /* Hide any overflow */
+}
+
+/* Hide elements when PlantDetail is visible */
+.hide-when-detail {
+  display: none;
+}
