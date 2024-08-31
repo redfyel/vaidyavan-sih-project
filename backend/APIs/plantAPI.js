@@ -12,7 +12,7 @@ plantApp.use(exp.json());
 plantApp.get('/plants', expressAsyncHandler(async (req, res) => {
     try {
       const plantsCollection = req.app.get('plantsCollection');
-      const plants = await plantsCollection.find([]).toArray();
+      const plants = await plantsCollection.find().toArray();
       res.json(plants);
     } catch (error) {
       res.status(500).json({ message: "An error occurred while fetching plants", error: error.message });

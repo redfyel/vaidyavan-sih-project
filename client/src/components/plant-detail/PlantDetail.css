@@ -1,0 +1,68 @@
+.plant-detail {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .plant-detail-close {
+    background: transparent;
+    border: none;
+    color: #ff4d4d;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .plant-detail-close:hover {
+    color: #ff1a1a;
+  }
+  
+  .plant-detail-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .plant-detail-info {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .plant-detail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plant-detail-translate {
+    background: linear-gradient(45deg, #19cf56, #91d791);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .plant-detail-translate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  

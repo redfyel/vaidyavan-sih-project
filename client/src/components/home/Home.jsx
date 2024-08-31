@@ -10,9 +10,10 @@ import './Home.css';
 
 const Home = () => {
   return (
+    
     <header>
       <Helmet>
-        <title>VaidyaVan - Herbal Medicines</title>
+        <title>VaidyaVan</title>
         <meta name="description" content="VaidyaVan provides high-quality herbal medicines derived from natural ingredients." />
       </Helmet>
       <div className="header-content">

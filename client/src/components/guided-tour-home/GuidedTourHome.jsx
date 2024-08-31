@@ -11,7 +11,7 @@ import {
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import "./GTHome.css";
-import Chatbot from "../home/ChatBot";
+
 
 function GuidedTourHome() {
   const [openCategories, setOpenCategories] = useState([]);
@@ -29,6 +29,7 @@ function GuidedTourHome() {
   ];
 
   const diseaseOptions = {
+    "Cardiovascular Diseases": ["Coronary Artery Disease (CAD)", "Heart Attack", "Heart Stroke"],
     "Dermatological Diseases": ["Hyperpigmentation", "Acne", "Skin Cancer"],
     "Endocrine Diseases": [
       "Diabetes",
@@ -68,15 +69,37 @@ function GuidedTourHome() {
 
   return (
     <Box sx={{ p: 2, maxWidth: 600, margin: "0 auto" }}>
-      <Typography variant="h4" gutterBottom>
-        Diseases and Illnesses
+      <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', mb: 2 }}>
+        Explore Diseases & Remedies
       </Typography>
-      <Paper elevation={3} sx={{ p: 2 }}>
+      <Box
+        sx={{
+          p: 2,
+          mb: 3,
+          backgroundColor: '#eaf2e8',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          lineHeight: 1.5,
+          color: '#333',
+        }}
+      >
+        <Typography variant="body2" sx={{ color: '#333' }}>
+          Discover diseases and their remedies in our virtual tour. Click on a category to explore related diseases and learn about medicinal plants used for treatment. You can bookmark your favorite entries and navigate through detailed annotations for more insights.
+        </Typography>
+      </Box>
+      <Paper elevation={3} sx={{ p: 1 }}>
         <List>
           {diseaseCategories.map((category) => (
             <div key={category}>
-              <ListItem button onClick={() => handleCategoryClick(category)}>
-                <ListItemText primary={category} />
+              <ListItem
+                button
+                onClick={() => handleCategoryClick(category)}
+                sx={{ borderBottom: '1px solid #ddd', borderRadius: 1, mb: 0.5 }}
+              >
+                <ListItemText
+                  primary={category}
+                  sx={{ fontWeight: 'bold', color: '#333' }}
+                />
                 {openCategories.includes(category) ? (
                   <ExpandLess />
                 ) : (
@@ -93,7 +116,7 @@ function GuidedTourHome() {
                     <ListItem
                       button
                       key={disease}
-                      sx={{ pl: 4 }}
+                      sx={{ pl: 3, borderBottom: '1px solid #eee', '&:hover': { backgroundColor: '#f0f0f0' } }}
                       onClick={() => handleDiseaseClick(disease)}
                     >
                       <ListItemText primary={disease} />
@@ -107,7 +130,6 @@ function GuidedTourHome() {
       </Paper>
       <Chatbot />
     </Box>
-   
   );
 }
 

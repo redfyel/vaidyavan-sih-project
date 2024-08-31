@@ -1,0 +1,12 @@
+.plant-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+  }
+  
+  .plant-card-container > .plant-card {
+    min-height: 400px; /* Ensures cards are at least this height */
+  }
+  

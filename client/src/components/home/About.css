@@ -37,7 +37,7 @@
   #about .about-content h3 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #3498db;
+    color: #8ed286;
   }
   
   #about .about-content p {
@@ -50,7 +50,7 @@
   }
   
   #about .button a {
-    background: #3498db;
+    background: #087c1f;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
