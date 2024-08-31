@@ -42,6 +42,7 @@ function PlantDetail({ plant, onClose }) {
       </div>
 
       {/* Plant Details */}
+      <div className='container text-center'>
       <p className="plant-detail-info"><strong>Scientific Name:</strong> {plant.scientificName}</p>
       <p className="plant-detail-info"><strong>Important Part:</strong> {plant.importantPart}</p>
       <p className="plant-detail-info"><strong>Side Effects:</strong> {plant.sideEffects}</p>
@@ -51,6 +52,8 @@ function PlantDetail({ plant, onClose }) {
       {/* <img src={plant.image} alt={`Image of ${plant.name}`} className="plant-detail-image" /> */}
       
       <button className="plant-detail-translate" aria-label="Translate information">Translate</button>
+      </div>
+    
     </div>
   );
 }
