@@ -25,21 +25,23 @@ function PlantDetail({ plant, onClose }) {
       const updatedBookmarks = bookmarks.filter(bookmark => bookmark.id !== plant.id);
       localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
     } else {
-      console.log('Web Speech API is not supported.');
+      // Add to bookmarks
+      const updatedBookmarks = [...bookmarks, { id: plant.id, name: plant.name }];
+      localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
     }
-    const testAudio = () => {
-      const utterance = new SpeechSynthesisUtterance('Hello, this is a test.');
-      window.speechSynthesis.speak(utterance);
-    };
-    
-    testAudio();
-    
-    
+    setIsBookmarked(!isBookmarked);
+  };
+
+  const handleNotesToggle = () => {
+    setShowNotes(!showNotes);
+  };
+
+  const handleNotesChange = (e) => {
+    setNotes(e.target.value);
   };
 
   // Function to return text based on the selected language
   const getTranslatedText = (plant, language) => {
-    // Implement your translation logic here. For example:
     const translations = {
       en: `Scientific Name: ${plant.scientificName}, Important Part: ${plant.importantPart}, Side Effects: ${plant.sideEffects}, How to Use: ${plant.howToUse.join(', ')}, Diseases: ${plant.diseases.join(', ')}`,
       hi: `वैज्ञानिक नाम: ${plant.scientificName}, महत्वपूर्ण भाग: ${plant.importantPart}, दुष्प्रभाव: ${plant.sideEffects}, उपयोग कैसे करें: ${plant.howToUse.join(', ')}, रोग: ${plant.diseases.join(', ')}`,
@@ -98,42 +100,42 @@ function PlantDetail({ plant, onClose }) {
 
       {/* Plant Details */}
       <div className='container text-center'>
-      <p className="plant-detail-info"><strong>Scientific Name:</strong> {plant.scientificName}</p>
-      <p className="plant-detail-info"><strong>Important Part:</strong> {plant.importantPart}</p>
-      <p className="plant-detail-info"><strong>Side Effects:</strong> {plant.sideEffects}</p>
-      <p className="plant-detail-info"><strong>How to Use:</strong> {plant.howToUse.join(', ')}</p>
-      <p className="plant-detail-info"><strong>Diseases:</strong> {plant.diseases.join(', ')}</p>
-      
-      {/* Translate Button */}
-      <button className="plant-detail-translate" aria-label="Translate information">Translate</button>
-      
-      {/* Bookmark Icon */}
-      <button 
-        className={`plant-detail-bookmark ${isBookmarked ? 'bookmarked' : ''}`}
-        onClick={toggleBookmark}
-        aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
-      >
-        <i className={`fa${isBookmarked ? 's' : 'r'} fa-bookmark`}></i>
-      </button>
-      
-      {/* Notes Icon */}
-      <button 
-        className="plant-detail-notes"
-        onClick={handleNotesToggle}
-        aria-label="Add notes"
-      >
-        <i className="fa-regular fa-note-sticky"></i>
-      </button>
+        <p className="plant-detail-info"><strong>Scientific Name:</strong> {plant.scientificName}</p>
+        <p className="plant-detail-info"><strong>Important Part:</strong> {plant.importantPart}</p>
+        <p className="plant-detail-info"><strong>Side Effects:</strong> {plant.sideEffects}</p>
+        <p className="plant-detail-info"><strong>How to Use:</strong> {plant.howToUse.join(', ')}</p>
+        <p className="plant-detail-info"><strong>Diseases:</strong> {plant.diseases.join(', ')}</p>
+        
+        {/* Translate Button */}
+        <button className="plant-detail-translate" aria-label="Translate information">Translate</button>
+        
+        {/* Bookmark Icon */}
+        <button 
+          className={`plant-detail-bookmark ${isBookmarked ? 'bookmarked' : ''}`}
+          onClick={toggleBookmark}
+          aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
+        >
+          <i className={`fa${isBookmarked ? 's' : 'r'} fa-bookmark`}></i>
+        </button>
+        
+        {/* Notes Icon */}
+        <button 
+          className="plant-detail-notes"
+          onClick={handleNotesToggle}
+          aria-label="Add notes"
+        >
+          <i className="fa-regular fa-note-sticky"></i>
+        </button>
 
-      {/* Notes Section */}
-      {showNotes && (
-        <textarea
-          className="plant-detail-notes-input"
-          value={notes}
-          onChange={handleNotesChange}
-          placeholder="Add your notes here..."
-        ></textarea>
-      )}
+        {/* Notes Section */}
+        {showNotes && (
+          <textarea
+            className="plant-detail-notes-input"
+            value={notes}
+            onChange={handleNotesChange}
+            placeholder="Add your notes here..."
+          ></textarea>
+        )}
       </div>
     
     </div>
