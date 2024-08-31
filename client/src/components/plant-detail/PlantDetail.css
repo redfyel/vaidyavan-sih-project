@@ -97,6 +97,36 @@
 .plant-detail-guidelines:hover {
   background-color: #84e497;
 }
+.plant-detail-translate-container {
+  position: relative;
+}
+
+.language-dropdown {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.language-dropdown.show {
+  display: block;
+}
+
+.language-dropdown button {
+  background: #f9f9f9;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-dropdown button:hover {
+  background: #e0e0e0;
+}
 /* Styles for when PlantDetail is active */
 .white-background {
   background-color: white;
