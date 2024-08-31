@@ -1,27 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PlantDetail.css';
 import ModelViewer from '../model/ModelViewer';
 import GuidelinesPopup from './GuidelinesPopup'; 
 
 function PlantDetail({ plant, onClose }) {
   const [showGuidelines, setShowGuidelines] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language is English
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [showNotes, setShowNotes] = useState(false);
+  const [notes, setNotes] = useState('');
+
+  useEffect(() => {
+    // Check if the plant is already bookmarked
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    setIsBookmarked(bookmarks.some(bookmark => bookmark.id === plant.id));
+  }, [plant.id]);
 
   const handleShowGuidelines = () => setShowGuidelines(true);
   const handleCloseGuidelines = () => setShowGuidelines(false);
 
-  // Function to handle language selection and play text-to-speech
-  const handleTranslate = (language) => {
-    setSelectedLanguage(language);
-    const utterance = new SpeechSynthesisUtterance(getTranslatedText(plant, language));
-    utterance.lang = getLanguageCode(language);
-    window.speechSynthesis.speak(utterance);
-    if ('speechSynthesis' in window) {
-      console.log('Web Speech API is supported.');
+  const toggleBookmark = () => {
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    if (isBookmarked) {
+      // Remove from bookmarks
+      const updatedBookmarks = bookmarks.filter(bookmark => bookmark.id !== plant.id);
+      localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
     } else {
       console.log('Web Speech API is not supported.');
     }
-
+    const testAudio = () => {
+      const utterance = new SpeechSynthesisUtterance('Hello, this is a test.');
+      window.speechSynthesis.speak(utterance);
+    };
+    
+    testAudio();
     
     
   };
@@ -35,7 +46,7 @@ function PlantDetail({ plant, onClose }) {
       bn: `বৈজ্ঞানিক নাম: ${plant.scientificName}, গুরুত্বপূর্ণ অংশ: ${plant.importantPart}, পার্শ্বপ্রতিক্রিয়া: ${plant.sideEffects}, কীভাবে ব্যবহার করবেন: ${plant.howToUse.join(', ')}, রোগ: ${plant.diseases.join(', ')}`,
       te: `శాస్త్రవేత్త పేరు: ${plant.scientificName}, ముఖ్యమైన భాగం: ${plant.importantPart}, సైడ్ ఎఫెక్ట్స్: ${plant.sideEffects}, ఎలా ఉపయోగించాలో: ${plant.howToUse.join(', ')}, జబ్బులు: ${plant.diseases.join(', ')}`,
       ta: `வானி பெயர்: ${plant.scientificName}, முக்கியமான பகுதி: ${plant.importantPart}, புறவாய்வு விளைவுகள்: ${plant.sideEffects}, எப்படி பயன்படுத்துவது: ${plant.howToUse.join(', ')}, நோய்கள்: ${plant.diseases.join(', ')}`,
-
+      // Add more languages and translations as needed
     };
     return translations[language] || translations.en;
   };
@@ -84,29 +95,45 @@ function PlantDetail({ plant, onClose }) {
       <div className="model-container">
         <ModelViewer modelUrl="/Turmeric_Roots.glb" />
       </div>
-       
+
       {/* Plant Details */}
       <div className='container text-center'>
-        <p className="plant-detail-info"><strong>Scientific Name:</strong> {plant.scientificName}</p>
-        <p className="plant-detail-info"><strong>Important Part:</strong> {plant.importantPart}</p>
-        <p className="plant-detail-info"><strong>Side Effects:</strong> {plant.sideEffects}</p>
-        <p className="plant-detail-info"><strong>How to Use:</strong> {plant.howToUse.join(', ')}</p>
-        <p className="plant-detail-info"><strong>Diseases:</strong> {plant.diseases.join(', ')}</p>
+      <p className="plant-detail-info"><strong>Scientific Name:</strong> {plant.scientificName}</p>
+      <p className="plant-detail-info"><strong>Important Part:</strong> {plant.importantPart}</p>
+      <p className="plant-detail-info"><strong>Side Effects:</strong> {plant.sideEffects}</p>
+      <p className="plant-detail-info"><strong>How to Use:</strong> {plant.howToUse.join(', ')}</p>
+      <p className="plant-detail-info"><strong>Diseases:</strong> {plant.diseases.join(', ')}</p>
+      
+      {/* Translate Button */}
+      <button className="plant-detail-translate" aria-label="Translate information">Translate</button>
+      
+      {/* Bookmark Icon */}
+      <button 
+        className={`plant-detail-bookmark ${isBookmarked ? 'bookmarked' : ''}`}
+        onClick={toggleBookmark}
+        aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
+      >
+        <i className={`fa${isBookmarked ? 's' : 'r'} fa-bookmark`}></i>
+      </button>
+      
+      {/* Notes Icon */}
+      <button 
+        className="plant-detail-notes"
+        onClick={handleNotesToggle}
+        aria-label="Add notes"
+      >
+        <i className="fa-regular fa-note-sticky"></i>
+      </button>
 
-        {/* Translate Button and Dropdown */}
-        <div className="plant-detail-translate-container">
-          <button className="plant-detail-translate" aria-label="Translate information" onClick={() => document.getElementById('language-dropdown').classList.toggle('show')}>
-            Translate
-          </button>
-          <div id="language-dropdown" className="language-dropdown">
-            <button onClick={() => handleTranslate('en')}>English</button>
-            <button onClick={() => handleTranslate('hi')}>Hindi</button>
-            <button onClick={() => handleTranslate('bn')}>Bengali</button>
-            <button onClick={() => handleTranslate('te')}>Telugu</button>
-            <button onClick={() => handleTranslate('ta')}>Tamil</button>
-            {/* Add more languages as needed */}
-          </div>
-        </div>
+      {/* Notes Section */}
+      {showNotes && (
+        <textarea
+          className="plant-detail-notes-input"
+          value={notes}
+          onChange={handleNotesChange}
+          placeholder="Add your notes here..."
+        ></textarea>
+      )}
       </div>
     
     </div>
