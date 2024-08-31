@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PlantCard from '../plant-display/PlantCard';
 import PlantDetail from '../plant-detail/PlantDetail';
+import Chatbot from '../home/ChatBot';
 
 function Learn() {
   const [plants, setPlants] = useState([]);
@@ -44,6 +45,7 @@ function Learn() {
           ))}
         </div>
       )}
+      <Chatbot />
     </div>
   );
 }

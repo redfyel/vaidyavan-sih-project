@@ -1,0 +1,82 @@
+/* Container for the cards */
+.tilt-card-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+  }
+  
+  /* Styling for each card */
+  .tilt-card {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    background: linear-gradient(145deg, #4caf50, #367d3b);
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    perspective: 1000px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .tilt-card-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .tilt-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(100%) rotate(45deg);
+    transition: transform 0.4s ease;
+    z-index: 1;
+  }
+  
+  .tilt-card:hover::before {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  
+  .tilt-card:hover {
+    transform: rotateX(0) rotateY(0) scale(1.1);
+  }
+  
+  /* .card-number {
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+  } */
+  
+  .tilt-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .tilt-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #f1f1f1;
+  }
+  
+  /* In Products.css */
+.tilt-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .tilt-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  

@@ -5,7 +5,7 @@ import {Link, Outlet, useNavigate} from "react-router-dom"
 import { AiFillProduct } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegEdit } from "react-icons/fa";
-
+import Chatbot from '../home/ChatBot';
 
 
 function UserProfile() {
@@ -31,6 +31,7 @@ function UserProfile() {
             {/* <button className='btn p-1' id='bt' >{currentUser.products.length}</button> */}
         </li>
       </ul>
+      <Chatbot />
       <Outlet />
     </div>
   )

@@ -1,0 +1,33 @@
+#rotating-images {
+    padding: 20px 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .rotating-images-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .rotating-images-track {
+    display: flex;
+    animation: slide 20s linear infinite;
+  }
+  
+  .rotating-images-track img {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    margin-right: 20px;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
