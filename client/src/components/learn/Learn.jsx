@@ -9,6 +9,7 @@ function Learn() {
   const [selectedPlant, setSelectedPlant] = useState(null); 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     async function fetchPlants() {
@@ -41,6 +42,11 @@ function Learn() {
     setSelectedPlant(null);
   };
 
+  // Filter plants based on search query
+  const filteredPlants = plants.filter((plant) =>
+    plant.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   if (isLoading) {
     return <div>Loading plants...</div>;
   }
@@ -51,11 +57,20 @@ function Learn() {
 
   return (
     <div>
+      <div className="search-bar-container">
+        <input
+          type="text"
+          placeholder="Search for a herb..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="search-bar"
+        />
+      </div>
       {selectedPlant ? (
         <PlantDetail plant={selectedPlant} onClose={handleCloseDetail} />
       ) : (
         <div className="plant-card-container">
-          {plants.map((plant) => (
+          {filteredPlants.map((plant) => (
             <PlantCard key={plant._id} plant={plant} onClick={handleCardClick} />
           ))}
         </div>
