@@ -51,7 +51,7 @@ const Chatbot = () => {
       {isOpen ? (
         <div className="chatbot-container">
           <div className="chatbot-header">
-            Chatbot
+            Oshidhi
             <FaMinus className="minimize-icon" onClick={toggleChatbot} /> {/* Minimize icon */}
           </div>
           <div className="chatbot-messages">

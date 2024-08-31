@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PlantDetail.css';
 import ModelViewer from '../model/ModelViewer';
-import GuidelinesPopup from './GuidelinesPopup'; // Import the guidelines popup component
+import GuidelinesPopup from './GuidelinesPopup'; 
 
 function PlantDetail({ plant, onClose }) {
   const [showGuidelines, setShowGuidelines] = useState(false);
