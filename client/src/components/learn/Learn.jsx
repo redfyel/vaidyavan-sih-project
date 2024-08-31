@@ -6,6 +6,7 @@ function Learn() {
   const [plants, setPlants] = useState([]);
   const [selectedPlant, setSelectedPlant] = useState(null);
 
+
   // Fetch plants data when the component mounts
   useEffect(() => {
     const fetchPlants = async () => {

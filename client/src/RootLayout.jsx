@@ -1,6 +1,7 @@
 import Header from './components/header/Header'
 import { Outlet } from 'react-router-dom'
 
+
 function RootLayout() {
   return (
     <div>
@@ -14,3 +15,4 @@ function RootLayout() {
 }
 
 export default RootLayout
+

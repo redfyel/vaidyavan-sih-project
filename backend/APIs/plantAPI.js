@@ -1,6 +1,7 @@
 let exp = require("express");
 const {Db} = require('mongodb')
 const plantApp = exp.Router();
+const tokenVerify = require('../middlewares/tokenVerify.js')
 const expressAsyncHandler = require('express-async-handler')
 
 require('dotenv').config()
@@ -17,3 +18,5 @@ plantApp.get('/plants', expressAsyncHandler(async (req, res) => {
       res.status(500).json({ message: "An error occurred while fetching plants", error: error.message });
     }
   }));
+
+module.exports = plantApp;
