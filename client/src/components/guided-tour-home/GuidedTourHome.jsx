@@ -11,6 +11,7 @@ import {
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import "./GTHome.css";
+import Chatbot from "../home/ChatBot";
 
 function GuidedTourHome() {
   const [openCategories, setOpenCategories] = useState([]);
@@ -104,7 +105,9 @@ function GuidedTourHome() {
           ))}
         </List>
       </Paper>
+      <Chatbot />
     </Box>
+   
   );
 }
 
