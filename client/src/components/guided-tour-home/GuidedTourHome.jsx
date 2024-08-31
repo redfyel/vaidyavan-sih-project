@@ -128,7 +128,6 @@ function GuidedTourHome() {
           ))}
         </List>
       </Paper>
-      <Chatbot />
     </Box>
   );
 }
