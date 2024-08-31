@@ -2,7 +2,7 @@
 import { useContext } from 'react'
 import {UserLoginContext} from '../../contexts/UserLoginContext'
 import {Link, Outlet, useNavigate} from "react-router-dom"
-import { AiFillProduct } from "react-icons/ai";
+import { CiBookmark } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegEdit } from "react-icons/fa";
 
@@ -23,12 +23,12 @@ function UserProfile() {
       </div>
       <ul className='nav fs-5 p-3 justify-content-around my-2 '>
         <li className="nav-item ">
-            <Link to='products' className='nav-link profile'> <AiFillProduct className='icons'/>Products </Link>
+            <Link to='' className='nav-link profile'> <CiBookmark />Bookmarks</Link>
         </li>
 
         <li className="nav-item ">
-            <Link to='cart' className='nav-link profile'> <FiShoppingCart className='icons'/>Cart</Link>
-            {/* <button className='btn p-1' id='bt' >{currentUser.products.length}</button> */}
+            <Link to='' className='nav-link profile'> <FiShoppingCart className='icons'/>Notes</Link>
+           
         </li>
       </ul>
       <Chatbot />

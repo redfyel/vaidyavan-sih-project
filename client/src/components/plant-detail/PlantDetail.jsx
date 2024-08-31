@@ -26,8 +26,8 @@ function PlantDetail({ plant, onClose }) {
       localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
     } else {
       // Add to bookmarks
-      const updatedBookmarks = [...bookmarks, { id: plant.id, name: plant.name }];
-      localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
+      bookmarks.push({ id: plant.id, name: plant.name });
+      localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
     setIsBookmarked(!isBookmarked);
   };
@@ -137,7 +137,6 @@ function PlantDetail({ plant, onClose }) {
           ></textarea>
         )}
       </div>
-    
     </div>
   );
 }
