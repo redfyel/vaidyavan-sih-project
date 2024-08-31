@@ -13,16 +13,29 @@ const Chatbot = () => {
     setMessages([...messages, { text: input, sender: "user" }]);
     setInput("");
 
+    // Simulate a response from the chatbot
     setTimeout(() => {
+      const response = generateResponse(input);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { text: "Sorry, I'm just a demo chatbot.", sender: "bot" }
+        { text: response, sender: "bot" }
       ]);
     }, 1000);
   };
 
+  const generateResponse = (userInput) => {
+    // Basic dynamic response logic
+    const lowerInput = userInput.toLowerCase();
+    if (lowerInput.includes('hello')) return 'Hello! How can I help you today?';
+    if (lowerInput.includes('plant care')) return 'Here are some tips for plant care...';
+    return 'Sorry, I didn\'t understand that. Could you please provide more details?';
+  };
+
   return (
     <div className="chatbot-container">
+      <div className="chatbot-header">
+        Chatbot
+      </div>
       <div className="chatbot-messages">
         {messages.map((msg, index) => (
           <div
