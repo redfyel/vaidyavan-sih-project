@@ -1,84 +1,132 @@
+css
+
+/* Contact Section Styles */
 .contact-section {
-  background: linear-gradient(to bottom, #8BC34A, #2E865F); /* Green Harmony gradient */
-  color: white;
-  padding: 40px 20px;
+  background: linear-gradient(to bottom, #f5f7fa, #c3cfe2); /* Light grey to soft blue gradient */
+  color: #2c3e50; /* Dark grey for text */
+  padding: 60px 30px;
   text-align: center;
+  font-family: 'Arial', sans-serif; /* Modern, clean font */
 }
 
 .contact-section h2 {
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 20px;
+  color: #34495e; /* Dark slate grey for heading */
 }
 
 .contact-section p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  color: #4d5656; /* Slightly lighter grey for paragraph text */
 }
 
+/* Contact Details Grid Styles */
 .contact-details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible grid layout */
+  gap: 40px; /* More space between grid items */
+  margin-bottom: 50px;
 }
 
 .contact-info {
-  width: 45%;
-  margin-bottom: 20px;
+  background-color: #ffffff; /* White background for cards */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Light shadow for a clean look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Center align text inside cards */
 }
 
 .contact-info h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #2e86de; /* Vibrant blue for subheadings */
 }
 
 .contact-info p {
   font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #5d6d7e; /* Soft grey for text */
 }
 
 .contact-info a {
-  color: #8BC34A; /* Light green for links */
+  color: #e74c3c; /* Bright red for links to draw attention */
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
+  color: #c0392b; /* Darker red on hover */
   text-decoration: underline;
 }
 
+.contact-info:hover {
+  transform: translateY(-8px); /* Slight lift effect on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+}
+
+/* Contact Form Styles */
 .contact-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 600px; /* Wider form for a more open feel */
+  margin: 0 auto; /* Center form on the page */
 }
 
 .contact-input, 
 .contact-textarea {
   width: 100%;
-  max-width: 400px;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 2px solid #2E865F;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #b2bec3; /* Light grey border */
   border-radius: 5px;
-  background-color: #004d40;
-  color: white;
+  background-color: #f0f4f8; /* Very light grey background */
+  color: #2c3e50; /* Dark grey text */
+  font-size: 1em;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease;
+}
+
+.contact-input::placeholder, 
+.contact-textarea::placeholder {
+  color: #95a5a6; /* Muted grey color for placeholders */
+}
+
+.contact-input:focus, 
+.contact-textarea:focus {
+  border-color: #2e86de; /* Blue border on focus */
 }
 
 .contact-button {
-  padding: 12px 20px;
-  background-color: #4CAF50;
+  padding: 15px 30px;
+  background-color: #2e86de; /* Blue button */
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 1.1em;
+  font-size: 1.2em;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .contact-button:hover {
-  background-color: #388E3C;
+  background-color: #1b4f72; /* Darker blue on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
 }
 
-@media (max-width: 768px) {
+/* Responsive Styles */
+@media (max-width: 600px) {
   .contact-info {
-    width: 100%;
+    padding: 20px; /* Reduce padding on smaller screens */
+  }
+  
+  .contact-info h3 {
+    font-size: 1.4em; /* Slightly smaller font for smaller screens */
+  }
+  
+  .contact-info p, .contact-info a {
+    font-size: 1em; /* Reduce font size on small screens */
   }
 }

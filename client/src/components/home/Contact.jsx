@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import './Contact.css';
 
@@ -5,7 +7,8 @@ function Contact() {
   return (
     <div className="contact-section">
       <h2>Contact Us</h2>
-      <p>We'd love to hear from you! Feel free to reach out to us via the following methods:</p>
+    
+      
       <div className="contact-details">
         <div className="contact-info">
           <h3>Email Us</h3>
@@ -28,6 +31,7 @@ function Contact() {
           </p>
         </div>
       </div>
+      
       <form className="contact-form">
         <input type="text" placeholder="Your Name" className="contact-input" />
         <input type="email" placeholder="Your Email" className="contact-input" />
