@@ -14,10 +14,31 @@
     display: flex;
     animation: slide 20s linear infinite;
   }
+
+  /* h2 Heading Styles */
+h2 {
+  font-size: 2.5em;
+  margin-top: 20px;
+  color: #004d40; /* Deep teal color */
+  font-family: 'Poppins', sans-serif; /* Clean, modern font */
+  font-weight: 700; /* Bold weight */
+  text-align: center; /* Centers the heading */
+  letter-spacing: 1px; /* Adds slight spacing between letters for clarity */
+  text-transform: uppercase; /* Transforms text to uppercase for emphasis */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transformation */
+}
+
+/* Hover Effect */
+h2:hover {
+  color: #00796b; /* Changes to a lighter shade of teal on hover */
+  transform: translateY(-3px); /* Slightly lifts the heading on hover */
+}
+
   
   .rotating-images-track img {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 500px;
     border-radius: 15px;
     margin-right: 20px;
   }

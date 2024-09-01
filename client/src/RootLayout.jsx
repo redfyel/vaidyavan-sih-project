@@ -7,7 +7,7 @@ function RootLayout() {
     <div>
         <Header />
         {/* Body -> outlet */}
-        <div style={{minHeight : "100vh"}} className='container'>
+        <div>
             <Outlet />
         </div>
     </div>

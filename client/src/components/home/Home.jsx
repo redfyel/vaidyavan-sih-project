@@ -6,7 +6,7 @@ import RotatingImages from './RotatingImages';
 import Contact from './Contact';
 import Footer from './Footer';
 import Chatbot from './ChatBot';
-import './Home.css';
+ import './Home.css';
 
 const Home = () => {
   return (

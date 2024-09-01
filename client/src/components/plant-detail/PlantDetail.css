@@ -121,3 +121,60 @@
   padding: 10px;
   margin-top: 10px;
 }
+
+.plant-detail-language-select {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.plant-detail {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(135deg, #c8e7d9, #a1d7b6); /* Gradient background */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 50px auto;
+  overflow: hidden; 
+}
+
+.plant-detail-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.plant-detail-title {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #0b6222;
+}
+
+.plant-detail-info {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #555;
+}
+
+.model-container {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.plant-detail-translate {
+  background: linear-gradient(45deg, #0b6222, #7be08f);
+  color: white;
+ 
+}
