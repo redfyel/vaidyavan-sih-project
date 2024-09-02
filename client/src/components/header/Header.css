@@ -19,7 +19,7 @@ background-color: #cfe2d9;
 }
 
 .brand-name {
-  font-family: 'Playfair Display', serif; /* Ensure this font is imported in your HTML or CSS */
+  font-family: 'Playfair Display', serif; 
   font-size: 2rem;
   color: #2c3e50;
   margin: 0;
