@@ -6,7 +6,8 @@ import RotatingImages from './RotatingImages';
 import Contact from './Contact';
 import Footer from './Footer';
 import Chatbot from './ChatBot';
-import './Home.css';
+ import './Home.css';
+//  import Hero from './'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       </div>
       <About />
       <Products />
+      {/* <Hero /> */}
       <RotatingImages />
       <Contact />
       <Footer />

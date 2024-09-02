@@ -8,16 +8,11 @@ function PlantDetail({ plant, onClose }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [notes, setNotes] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
-  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
-    // Load saved notes and bookmarks
-    const savedNotes = JSON.parse(localStorage.getItem('notes')) || {};
-    const savedBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-    
-    setNotes(savedNotes[plant.id] || '');
-    setIsBookmarked(savedBookmarks.some(bookmark => bookmark.id === plant.id));
+    // Check if the plant is already bookmarked
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    setIsBookmarked(bookmarks.some(bookmark => bookmark.id === plant.id));
   }, [plant.id]);
 
   const handleShowGuidelines = () => setShowGuidelines(true);
@@ -26,38 +21,26 @@ function PlantDetail({ plant, onClose }) {
   const toggleBookmark = () => {
     const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
     if (isBookmarked) {
-      // Remove from bookmarks
       const updatedBookmarks = bookmarks.filter(bookmark => bookmark.id !== plant.id);
       localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
       setIsBookmarked(false);
     } else {
       // Add to bookmarks
-      bookmarks.push(plant);
+      bookmarks.push({ id: plant.id, name: plant.name });
       localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
       setIsBookmarked(true);
     }
   };
 
-  const handleNotesToggle = () => setShowNotes(!showNotes);
+  const handleNotesToggle = () => {
+    setShowNotes(!showNotes);
+  };
 
   const handleNotesChange = (e) => {
-    const newNotes = e.target.value;
-    setNotes(newNotes);
-    const savedNotes = JSON.parse(localStorage.getItem('notes')) || {};
-    savedNotes[plant.id] = newNotes;
-    localStorage.setItem('notes', JSON.stringify(savedNotes));
+    setNotes(e.target.value);
   };
 
-  const handleTranslateClick = () => setShowDropdown(!showDropdown);
-
-  const handleLanguageSelect = (language) => {
-    setSelectedLanguage(language);
-    setShowDropdown(false);
-    const text = getTranslatedText(plant, language);
-    const languageCode = getLanguageCode(language);
-    playAudio(text, languageCode);
-  };
-
+  // Function to return text based on the selected language
   const getTranslatedText = (plant, language) => {
     const translations = {
       en: `Scientific Name: ${plant.scientificName}, Important Part: ${plant.importantPart}, Side Effects: ${plant.sideEffects}, How to Use: ${plant.howToUse.join(', ')}, Diseases: ${plant.diseases.join(', ')}`,
@@ -65,6 +48,7 @@ function PlantDetail({ plant, onClose }) {
       bn: `বৈজ্ঞানিক নাম: ${plant.scientificName}, গুরুত্বপূর্ণ অংশ: ${plant.importantPart}, পার্শ্বপ্রতিক্রিয়া: ${plant.sideEffects}, কীভাবে ব্যবহার করবেন: ${plant.howToUse.join(', ')}, রোগ: ${plant.diseases.join(', ')}`,
       te: `శాస్త్రవేత్త పేరు: ${plant.scientificName}, ముఖ్యమైన భాగం: ${plant.importantPart}, సైడ్ ఎఫెక్ట్స్: ${plant.sideEffects}, ఎలా ఉపయోగించాలో: ${plant.howToUse.join(', ')}, జబ్బులు: ${plant.diseases.join(', ')}`,
       ta: `வானி பெயர்: ${plant.scientificName}, முக்கியமான பகுதி: ${plant.importantPart}, புறவாய்வு விளைவுகள்: ${plant.sideEffects}, எப்படி பயன்படுத்துவது: ${plant.howToUse.join(', ')}, நோய்கள்: ${plant.diseases.join(', ')}`,
+      // Add more languages and translations as needed
     };
     return translations[language] || translations.en;
   };
@@ -76,14 +60,9 @@ function PlantDetail({ plant, onClose }) {
       bn: 'bn-IN',
       te: 'te-IN',
       ta: 'ta-IN',
+      // Add more language codes as needed
     };
     return languageCodes[language] || 'en-US';
-  };
-
-  const playAudio = (text, languageCode) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = languageCode;
-    window.speechSynthesis.speak(utterance);
   };
 
   return (
@@ -126,19 +105,26 @@ function PlantDetail({ plant, onClose }) {
         <p className="plant-detail-info"><strong>How to Use:</strong> {plant.howToUse.join(', ')}</p>
         <p className="plant-detail-info"><strong>Diseases:</strong> {plant.diseases.join(', ')}</p>
         
+        {/* Language Selection Dropdown */}
+        <select 
+          className="plant-detail-language-select"
+          value={selectedLanguage}
+          onChange={(e) => setSelectedLanguage(e.target.value)}
+        >
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="bn">Bengali</option>
+          <option value="te">Telugu</option>
+          <option value="ta">Tamil</option>
+          <option value="fr">French</option>
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+          <option value="de">German</option>
+          {/* Add more languages as needed */}
+        </select>
+
         {/* Translate Button */}
-        <div className="plant-detail-translate-container">
-          <button className="plant-detail-translate" onClick={handleTranslateClick} aria-label="Translate information">Translate</button>
-          {showDropdown && (
-            <div className="language-dropdown show">
-              <button onClick={() => handleLanguageSelect('en')}>English</button>
-              <button onClick={() => handleLanguageSelect('hi')}>Hindi</button>
-              <button onClick={() => handleLanguageSelect('bn')}>Bengali</button>
-              <button onClick={() => handleLanguageSelect('te')}>Telugu</button>
-              <button onClick={() => handleLanguageSelect('ta')}>Tamil</button>
-            </div>
-          )}
-        </div>
+        <button className="plant-detail-translate" aria-label="Translate information">Translate</button>
         
         {/* Bookmark Icon */}
         <button 

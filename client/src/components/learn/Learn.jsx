@@ -7,13 +7,15 @@ import './Learn.css';
 
 function Learn() {
   const [plants, setPlants] = useState([]);
-  const [selectedPlant, setSelectedPlant] = useState(null); 
+  const [selectedPlant, setSelectedPlant] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [showGuidelines, setShowGuidelines] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
-  const [scanningMessage, setScanningMessage] = useState(null);
+  const [scanningMessage, setScanningMessage] = useState('');
+  const [fileName, setFileName] = useState('');
+  const [isScanning, setIsScanning] = useState(false);
 
   useEffect(() => {
     async function fetchPlants() {
@@ -23,70 +25,73 @@ function Learn() {
           throw new Error('Network response was not ok');
         }
         const data = await res.json();
-        console.log('Fetched data:', data);  // Log the data for debugging
         setPlants(data);
       } catch (err) {
-        console.error('Error fetching plants:', err.message);  // Log the specific error message
-        setError(err); // Store the error for display
+        console.error('Error fetching plants:', err.message);
+        setError(err);
       } finally {
-        setIsLoading(false); 
+        setIsLoading(false);
       }
     }
 
     fetchPlants();
   }, []);
 
-  // Function to handle selecting a plant
   const handleCardClick = (plant) => {
     setSelectedPlant(plant);
   };
 
-  // Function to close the detail view
   const handleCloseDetail = () => {
     setSelectedPlant(null);
   };
 
-  // Filter plants based on search query
   const filteredPlants = plants.filter((plant) =>
     plant.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Clear the search query
   const clearSearch = () => {
     setSearchQuery('');
   };
 
-  // Handle "Scan and Find" button click
-  const handleScanAndFind = () => {
-    setShowGuidelines(true);
+  const handleScanClick = () => {
+    setShowModal(true);
   };
 
-  // Handle image upload
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
+      setFileName(file.name);
       setUploadedImage(URL.createObjectURL(file));
-      setShowGuidelines(false);  // Close guidelines after upload
-
-      // Show scanning message
       setScanningMessage('Scanning your upload...');
+      setIsScanning(true);
+      setShowModal(false);
 
       // Simulate scanning process
       setTimeout(() => {
-        setScanningMessage('Uploaded plant is Wheat Grass');
-      }, 2000); // 2 seconds for scanning message
+        setScanningMessage('Uploaded herb is Aloe Vera');
+        setIsScanning(false);
+      }, 3000);
     }
   };
 
-  // Close modal function
-  const closeModal = () => {
-    setShowGuidelines(false);
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleScan = () => {
+    if (fileName) {
+      // Trigger scanning logic here if needed
+      setScanningMessage('Scanning your upload...');
+      setIsScanning(true);
+      setTimeout(() => {
+        setScanningMessage('Uploaded herb is Aloe Vera');
+        setIsScanning(false);
+      }, 3000);
+    }
   };
 
   if (isLoading) {
-    return <div>
-      <h1 className='lead text-center fs-1'>Loading plants...</h1>
-    </div>;
+    return <div>Loading plants...</div>;
   }
 
   if (error) {
@@ -114,25 +119,11 @@ function Learn() {
           </div>
 
           <div className="scan-find-container">
-            <button className="scan-find-button" onClick={handleScanAndFind}>
-              <FaCamera /> Scan and Find
+            <button className="scan-find-button" onClick={handleScanClick}>
+              <FaCamera className="scan-icon" /> Scan and Find
             </button>
           </div>
         </>
-      )}
-
-      {showGuidelines && (
-        <div className="modal-backdrop" onClick={closeModal}>
-          <div className="guidelines-popup" onClick={(e) => e.stopPropagation()}>
-            <h2>How to Scan a Plant</h2>
-            <ul>
-              <li>Ensure the plant is well-lit.</li>
-              <li>Take a clear picture of the plant's leaves or flowers.</li>
-              <li>Focus on the distinctive parts of the plant.</li>
-            </ul>
-            <input type="file" accept="image/*" onChange={handleImageUpload} />
-          </div>
-        </div>
       )}
 
       {uploadedImage && (
@@ -140,11 +131,33 @@ function Learn() {
           <h3>Image Preview</h3>
           <img src={uploadedImage} alt="Uploaded Plant" />
           {scanningMessage && (
-            <div className={`scanning-message ${scanningMessage.includes('Scanning') ? 'scanning' : 'result'}`}>
+            <div className={`scanning-message ${isScanning ? 'scanning' : 'result'}`}>
               {scanningMessage}
-              {scanningMessage.includes('Scanning') && <div className="spinner"></div>}
+              {isScanning && <div className="spinner"></div>}
             </div>
           )}
+        </div>
+      )}
+
+      {showModal && (
+        <div className="modal-backdrop" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Upload a Plant Image</h2>
+            <p>Please upload an image of the herb you want to identify.</p>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="file-upload-button"
+            />
+            <div className="file-name" >
+              {fileName ? fileName : 'No file chosen'}
+            </div>
+            <button className="scan-button" onClick={handleScan} disabled={isScanning}>
+              {isScanning ? 'Scanning...' : 'Scan'}
+            </button>
+            <button className="close-modal-button" onClick={handleCloseModal}><FaTimes /></button>
+          </div>
         </div>
       )}
 

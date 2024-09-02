@@ -1,28 +1,46 @@
-/* src/components/Header.css */
+/* Importing the font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300&display=swap');
 
-header {
-    background: linear-gradient(135deg, #a0c2a2, #CFE2D9);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  header h1 {
-    font-size: 3rem;
-    margin: 0;
-    animation: fadeIn 2s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+.header-content {
+  text-align: center;
+  padding: 100px 20px; /* Adjusted padding for more space */
+  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Light gradient for a subtle background */
+  position: relative; 
+   overflow: hidden;
+}
+
+/* Title Styles */
+.header-title {
+  font-size: 4rem;
+  font-weight: 700; /* Bold weight */
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  background: linear-gradient(45deg, #3db40a, #FFD700); /* Gradient background for text */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text fill transparent to show the gradient */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  margin: 0;
+  padding: 10px;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.header-title:hover {
+  transform: translateY(-5px); /* Slightly moves the title up on hover */
+  color: #1eb01b; /* Changes color on hover to match the gradient */
+}
+
+/* Subtitle Styles */
+.header-subtitle {
+  font-size: 1.6rem;
+  color: #7f8c8d; /* Cool gray for a soft contrast */
+  font-weight: 300; /* Light weight for a modern look */
+  margin-top: 20px;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif; /* Clean, modern font */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for readability */
+  transition: color 0.4s ease, transform 0.4s ease; /* Smooth transition for color and transformation */
+}
+
+.header-subtitle:hover {
+  color: #2c3e50; /* Changes color to a darker shade on hover */
+  transform: translateY(-3px); /* Moves subtitle up slightly on hover */
+}
