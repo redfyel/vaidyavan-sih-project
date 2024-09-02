@@ -10,7 +10,7 @@ function ModelViewer({ modelUrl }) {
   useEffect(() => {
     const width = mountRef.current.clientWidth;
     const height = mountRef.current.clientHeight;
-  
+
     // Create scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
@@ -59,7 +59,10 @@ function ModelViewer({ modelUrl }) {
     animate();
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
+      if (mountRef.current && renderer.domElement) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
+      controlsRef.current?.dispose(); // Clean up the controls to avoid memory leaks
     };
   }, [modelUrl]);
 

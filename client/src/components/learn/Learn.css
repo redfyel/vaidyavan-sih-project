@@ -72,8 +72,8 @@
 }
 
 .uploaded-image-preview img {
-  max-width: 100%;
-  height: auto;
+  max-width: 400px;
+  height: 400px;
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-top: 10px;

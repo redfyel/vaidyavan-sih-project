@@ -1,83 +1,70 @@
-/* GuidelinesPopup.css */
-
 .guidelines-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Make sure the popup is above other elements */
-  }
-  
-  .guidelines-popup-content {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-  
-  .guidelines-popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  .guidelines-popup h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #0b6222; /* Matching color to buttons */
-  }
-  
-  .guidelines-popup p {
-    font-size: 1.2em;
-    color: #333;
-    line-height: 1.6;
-  }
-  /* Styles for the backdrop */
-.modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000;
+  pointer-events: auto; /* Ensure the popup is clickable */
 }
 
-/* Styles for the popup */
-.guidelines-popup {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 80%; /* Adjust width as needed */
-  max-width: 600px; /* Max width for larger screens */
+.guidelines-popup-content {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  animation: fadeInPopup 0.3s ease-out;
   position: relative;
+  z-index: 1001; /* Ensure the content is above the background */
+  pointer-events: auto; /* Ensure the content is clickable */
 }
 
-/* Optional: Style for close button inside popup */
-.guidelines-popup button {
+.guidelines-popup-close {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 1.5rem;
   cursor: pointer;
+  color: #333;
+  transition: color 0.2s ease;
+  z-index: 1002; /* Ensure the close button is above the content */
+  pointer-events: auto; /* Ensure the close button is clickable */
+}
+
+.guidelines-popup-close:hover {
+  color: #ff0000;
+}
+
+.guidelines-popup-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.guidelines-popup-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Animation for popup */
+@keyframes fadeInPopup {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

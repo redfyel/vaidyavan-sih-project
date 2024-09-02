@@ -12,7 +12,6 @@ import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import "./GTHome.css";
 
-
 function GuidedTourHome() {
   const [openCategories, setOpenCategories] = useState([]);
   const navigate = useNavigate();
@@ -68,7 +67,7 @@ function GuidedTourHome() {
   };
 
   return (
-    <Box sx={{ p: 2, maxWidth: 600, margin: "0 auto" }}>
+    <Box sx={{ p: 3, maxWidth: 800, margin: "0 auto", overflow: 'hidden' }}>
       <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', mb: 2 }}>
         Explore Diseases & Remedies
       </Typography>
@@ -81,13 +80,15 @@ function GuidedTourHome() {
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
           lineHeight: 1.5,
           color: '#333',
+          maxWidth: '100%',
+          overflow: 'hidden',
         }}
       >
         <Typography variant="body2" sx={{ color: '#333' }}>
           Discover diseases and their remedies in our virtual tour. Click on a category to explore related diseases and learn about medicinal plants used for treatment. You can bookmark your favorite entries and navigate through detailed annotations for more insights.
         </Typography>
       </Box>
-      <Paper elevation={3} sx={{ p: 1 }}>
+      <Paper elevation={3} sx={{ p: 2 }}>
         <List>
           {diseaseCategories.map((category) => (
             <div key={category}>

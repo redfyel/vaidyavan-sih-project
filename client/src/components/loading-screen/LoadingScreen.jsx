@@ -16,7 +16,7 @@ function LoadingScreen() {
   return (
     <div className="loading-screen">
       <div className="logo-spinner"></div>
-      <h2 className="loading-text">Taking you to the garden of healing...</h2>
+      <p className="loading-text">Taking you to the garden of healing...</p>
       
     </div>
   );

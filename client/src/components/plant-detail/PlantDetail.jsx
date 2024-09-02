@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './PlantDetail.css';
 import ModelViewer from '../model/ModelViewer';
 import GuidelinesPopup from './GuidelinesPopup';
@@ -8,6 +8,10 @@ function PlantDetail({ plant, onClose }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [notes, setNotes] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  
+  // Reference to the audio element
+  const audioRef = useRef(null);
 
   useEffect(() => {
     // Check if the plant is already bookmarked
@@ -25,7 +29,6 @@ function PlantDetail({ plant, onClose }) {
       localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
       setIsBookmarked(false);
     } else {
-      // Add to bookmarks
       bookmarks.push({ id: plant.id, name: plant.name });
       localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
       setIsBookmarked(true);
@@ -63,6 +66,13 @@ function PlantDetail({ plant, onClose }) {
       // Add more language codes as needed
     };
     return languageCodes[language] || 'en-US';
+  };
+
+  const handleTranslate = () => {
+    const translatedText = getTranslatedText(plant, selectedLanguage);
+    const speech = new SpeechSynthesisUtterance(translatedText);
+    speech.lang = getLanguageCode(selectedLanguage);
+    window.speechSynthesis.speak(speech);
   };
 
   return (
@@ -124,7 +134,7 @@ function PlantDetail({ plant, onClose }) {
         </select>
 
         {/* Translate Button */}
-        <button className="plant-detail-translate" aria-label="Translate information">Translate</button>
+        <button className="plant-detail-translate" onClick={handleTranslate} aria-label="Translate information">Translate</button>
         
         {/* Bookmark Icon */}
         <button 

@@ -68,7 +68,8 @@ function Learn() {
 
       // Simulate scanning process
       setTimeout(() => {
-        setScanningMessage('Uploaded herb is Aloe Vera');
+        // Here you would call your image recognition API
+        setScanningMessage('Uploaded herb is Aloe Vera'); // Example result
         setIsScanning(false);
       }, 3000);
     }
@@ -80,11 +81,13 @@ function Learn() {
 
   const handleScan = () => {
     if (fileName) {
-      // Trigger scanning logic here if needed
       setScanningMessage('Scanning your upload...');
       setIsScanning(true);
+
+      // Simulate scanning process
       setTimeout(() => {
-        setScanningMessage('Uploaded herb is Aloe Vera');
+        // Here you would call your image recognition API
+        setScanningMessage('Uploaded herb is Aloe Vera'); // Example result
         setIsScanning(false);
       }, 3000);
     }
@@ -150,7 +153,7 @@ function Learn() {
               onChange={handleImageUpload}
               className="file-upload-button"
             />
-            <div className="file-name" >
+            <div className="file-name">
               {fileName ? fileName : 'No file chosen'}
             </div>
             <button className="scan-button" onClick={handleScan} disabled={isScanning}>

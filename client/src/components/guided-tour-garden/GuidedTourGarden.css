@@ -1,19 +1,18 @@
-/* GuidedTourGarden.css */
 .guided-tour-garden {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-  }
-  
-  .momento-tour {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+  position: relative;
+  max-width: 1200px; /* Adjust this value to control the max width of the component */
+  margin:auto; /* Centers the component horizontally */
+  padding: 20px; /* Adds padding around the component */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+.momento-tour {
+  width: 100%;
+  height: 600px; /* Adjust the height to fit your needs */
+  border: none;
+  border-radius: 8px; /* Optional: adds rounded corners to the iframe */
+}
+
   
   .info-overlay {
     position: absolute;
@@ -68,4 +67,6 @@
   .info-button-small:hover {
     background-color: #218838;
   }
+  
+
   

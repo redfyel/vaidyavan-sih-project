@@ -35,7 +35,7 @@ const Chatbot = () => {
         return "Sure, I'm here to help! What do you need assistance with?";
     } else if (input.includes("herbs") || input.includes("plants")) {
         return "I can provide information on various herbs and plants. Which one would you like to learn about?";
-    } else if (input.includes("disease") || input.includes("symptoms")) {
+    } else if (input.includes("what") || input.includes("symptoms")) {
         return "If you describe the symptoms you're seeing, I can suggest possible remedies and plants that might help.";
     } else if (input.includes("thank you")) {
         return "You're welcome!";

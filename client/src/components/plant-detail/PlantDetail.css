@@ -1,7 +1,7 @@
 .plant-detail {
   position: relative;
   padding: 20px;
-  background: linear-gradient(135deg, #c8e7d9, #a1d7b6); /* Gradient background */
+  background: linear-gradient(135deg, #d3e6dd, #a1d7b6); /* Gradient background */
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
@@ -23,7 +23,7 @@
 .plant-detail-title {
   font-size: 2em;
   margin-bottom: 15px;
-  color: #0b6222;
+  color: #3a854e;
 }
 
 .plant-detail-info {
