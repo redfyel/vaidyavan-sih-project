@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import './PlantDetail.css';
 import ModelViewer from '../model/ModelViewer';
 import GuidelinesPopup from './GuidelinesPopup';
+import { FaGlobe } from 'react-icons/fa'; 
+import { useNavigate } from 'react-router-dom'; 
 
 function PlantDetail({ plant, onClose }) {
   const [showGuidelines, setShowGuidelines] = useState(false);
@@ -9,12 +11,13 @@ function PlantDetail({ plant, onClose }) {
   const [showNotes, setShowNotes] = useState(false);
   const [notes, setNotes] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('en');
-  
-  // Reference to the audio element
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const navigate = useNavigate(); 
+
   const audioRef = useRef(null);
 
   useEffect(() => {
-    // Check if the plant is already bookmarked
     const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
     setIsBookmarked(bookmarks.some(bookmark => bookmark.id === plant.id));
   }, [plant.id]);
@@ -35,23 +38,14 @@ function PlantDetail({ plant, onClose }) {
     }
   };
 
-  const handleNotesToggle = () => {
-    setShowNotes(!showNotes);
-  };
+  const handleNotesToggle = () => setShowNotes(!showNotes);
+  const handleNotesChange = (e) => setNotes(e.target.value);
 
-  const handleNotesChange = (e) => {
-    setNotes(e.target.value);
-  };
-
-  // Function to return text based on the selected language
   const getTranslatedText = (plant, language) => {
     const translations = {
       en: `Scientific Name: ${plant.scientificName}, Important Part: ${plant.importantPart}, Side Effects: ${plant.sideEffects}, How to Use: ${plant.howToUse.join(', ')}, Diseases: ${plant.diseases.join(', ')}`,
       hi: `वैज्ञानिक नाम: ${plant.scientificName}, महत्वपूर्ण भाग: ${plant.importantPart}, दुष्प्रभाव: ${plant.sideEffects}, उपयोग कैसे करें: ${plant.howToUse.join(', ')}, रोग: ${plant.diseases.join(', ')}`,
-      bn: `বৈজ্ঞানিক নাম: ${plant.scientificName}, গুরুত্বপূর্ণ অংশ: ${plant.importantPart}, পার্শ্বপ্রতিক্রিয়া: ${plant.sideEffects}, কীভাবে ব্যবহার করবেন: ${plant.howToUse.join(', ')}, রোগ: ${plant.diseases.join(', ')}`,
-      te: `శాస్త్రవేత్త పేరు: ${plant.scientificName}, ముఖ్యమైన భాగం: ${plant.importantPart}, సైడ్ ఎఫెక్ట్స్: ${plant.sideEffects}, ఎలా ఉపయోగించాలో: ${plant.howToUse.join(', ')}, జబ్బులు: ${plant.diseases.join(', ')}`,
-      ta: `வானி பெயர்: ${plant.scientificName}, முக்கியமான பகுதி: ${plant.importantPart}, புறவாய்வு விளைவுகள்: ${plant.sideEffects}, எப்படி பயன்படுத்துவது: ${plant.howToUse.join(', ')}, நோய்கள்: ${plant.diseases.join(', ')}`,
-      // Add more languages and translations as needed
+      // Add more languages here
     };
     return translations[language] || translations.en;
   };
@@ -60,10 +54,9 @@ function PlantDetail({ plant, onClose }) {
     const languageCodes = {
       en: 'en-US',
       hi: 'hi-IN',
-      bn: 'bn-IN',
-      te: 'te-IN',
-      ta: 'ta-IN',
-      // Add more language codes as needed
+      tel : 'tel-IN',
+
+      // Add more language codes here
     };
     return languageCodes[language] || 'en-US';
   };
@@ -75,68 +68,73 @@ function PlantDetail({ plant, onClose }) {
     window.speechSynthesis.speak(speech);
   };
 
+  const handleBuyNow = () => {
+    navigate(`/order-plant/${plant.name}`); 
+  };
+  
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language);
+    setDropdownVisible(false);
+    // Add logic to handle language change if needed
+    handleTranslate(); // Optional: Speak the translated text immediately
+  };
+
   return (
     <div className="plant-detail">
       <button className="plant-detail-close" onClick={onClose} aria-label="Close details view">✕</button>
-      
-      {/* Guidelines Popup Button */}
+
       <button className="plant-detail-guidelines" onClick={handleShowGuidelines} aria-label="Show guidelines">?</button>
 
-      {/* Guidelines Popup */}
       {showGuidelines && (
-        <GuidelinesPopup 
-          onClose={handleCloseGuidelines}
-          className="guidelines-popup"
-        />
+        <GuidelinesPopup onClose={handleCloseGuidelines} className="guidelines-popup" />
       )}
 
       <h2 className="plant-detail-title text-center">{plant.name}</h2>
 
-      {/* Age Groups as Tags */}
       <div className="plant-detail-tags text-center">
         {plant.ageGroups.map((group, index) => (
           <span key={index} className="plant-detail-tag">{group}</span>
         ))}
       </div>
 
-      {/* Medicinal Uses */}
-      <p className="plant-detail-info"><strong>Medicinal Uses:</strong> {plant.medicinalValues.join(', ')}</p>
+      <p className="plant-detail-info text-center"><strong>Medicinal Uses:</strong> {plant.medicinalValues.join(', ')}</p>
 
-      {/* Model Viewer */}
       <div className="model-container">
         <ModelViewer modelUrl="/Turmeric_Roots.glb" />
       </div>
 
-      {/* Plant Details */}
       <div className="container text-center">
         <p className="plant-detail-info"><strong>Scientific Name:</strong> {plant.scientificName}</p>
         <p className="plant-detail-info"><strong>Important Part:</strong> {plant.importantPart}</p>
         <p className="plant-detail-info"><strong>Side Effects:</strong> {plant.sideEffects}</p>
         <p className="plant-detail-info"><strong>How to Use:</strong> {plant.howToUse.join(', ')}</p>
         <p className="plant-detail-info"><strong>Diseases:</strong> {plant.diseases.join(', ')}</p>
-        
-        {/* Language Selection Dropdown */}
-        <select 
-          className="plant-detail-language-select"
-          value={selectedLanguage}
-          onChange={(e) => setSelectedLanguage(e.target.value)}
-        >
-          <option value="en">English</option>
-          <option value="hi">Hindi</option>
-          <option value="bn">Bengali</option>
-          <option value="te">Telugu</option>
-          <option value="ta">Tamil</option>
-          <option value="fr">French</option>
-          <option value="zh">Chinese</option>
-          <option value="es">Spanish</option>
-          <option value="de">German</option>
-          {/* Add more languages as needed */}
-        </select>
 
-        {/* Translate Button */}
-        <button className="plant-detail-translate" onClick={handleTranslate} aria-label="Translate information">Translate</button>
+        <div className="translate-container">
+          <button 
+            className="plant-detail-translate"
+            onClick={toggleDropdown}
+          >
+            <FaGlobe /> Translate
+          </button>
+          <div 
+            className={`language-dropdown ${dropdownVisible ? 'show' : ''}`}
+          >
+            <button onClick={() => handleLanguageChange('en')}>English</button>
+            <button onClick={() => handleLanguageChange('hi')}>Hindi</button>
+            <button onClick={() => handleLanguageChange('hi')}>Telugu</button>
+            <button onClick={() => handleLanguageChange('hi')}>Tamil</button>
+            <button onClick={() => handleLanguageChange('hi')}>Malyalam</button>
+            <button onClick={() => handleLanguageChange('hi')}>Bengali</button>
+            <button onClick={() => handleLanguageChange('hi')}>Kannada</button>
+            {/* Add more languages as needed */}
+          </div>
+        </div>
         
-        {/* Bookmark Icon */}
         <button 
           className={`plant-detail-bookmark ${isBookmarked ? 'bookmarked' : ''}`}
           onClick={toggleBookmark}
@@ -145,7 +143,6 @@ function PlantDetail({ plant, onClose }) {
           <i className={`fa${isBookmarked ? 's' : 'r'} fa-bookmark`}></i>
         </button>
         
-        {/* Notes Icon */}
         <button 
           className="plant-detail-notes"
           onClick={handleNotesToggle}
@@ -154,7 +151,6 @@ function PlantDetail({ plant, onClose }) {
           <i className="fa-regular fa-note-sticky"></i>
         </button>
 
-        {/* Notes Section */}
         {showNotes && (
           <textarea
             className="plant-detail-notes-input"
@@ -163,6 +159,10 @@ function PlantDetail({ plant, onClose }) {
             placeholder="Add your notes here..."
           ></textarea>
         )}
+
+        <button className="plant-detail-buy-now" onClick={handleBuyNow}>
+          Buy Now
+        </button>
       </div>
     </div>
   );

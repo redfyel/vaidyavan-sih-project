@@ -7,6 +7,7 @@ import Learn from "./components/learn/Learn";
 import GuidedTourHome from "./components/guided-tour-home/GuidedTourHome";
 import GuidedTourGarden from "./components/guided-tour-garden/GuidedTourGarden";
 import LoadingScreen from "./components/loading-screen/LoadingScreen";
+import OrderPlant from "./components/plant-detail/OrderPlant";
 import "./App.css";
 
 function App() {
@@ -42,6 +43,11 @@ function App() {
           path: "loading",
           element: <LoadingScreen />,
         },
+
+        {
+          path: "order-plant/:name",
+          element: <OrderPlant />,
+        }
       ],
     },
   ]);

@@ -47,21 +47,6 @@
   background-color: #f9f9f9;
 }
 
-.plant-detail-translate {
-  background: linear-gradient(45deg, #0b6222, #7be08f);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 20px;
-}
-
-.plant-detail-translate:hover {
-  background-color: #7be08f;
-  transform: translateY(-3px);
-}
 
 .plant-detail-tags {
   margin-bottom: 10px;
@@ -102,19 +87,25 @@
   position: relative;
 }
 
-.language-dropdown {
-  display: none;
-  position: absolute;
-  background: white;
-  border: 1px solid #ddd;
+/* Translate Button */
+.plant-detail-translate {
+  background: linear-gradient(45deg, #0b6222, #7be08f);
+  color: white;
+  border: none;
+  padding: 12px 24px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+  position: relative; /* Added to position the dropdown correctly */
 }
 
-.language-dropdown.show {
-  display: block;
+.plant-detail-translate:hover {
+  background-color: #7be08f;
+  transform: translateY(-3px);
 }
+
+
 
 .language-dropdown button {
   background: #f9f9f9;
@@ -123,10 +114,33 @@
   width: 100%;
   text-align: left;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 .language-dropdown button:hover {
-  background: #e0e0e0;
+  background: #85d2a3;
+}
+.language-dropdown {
+  display: none;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 10px; 
+  opacity: 0;
+  visibility: visible; 
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.language-dropdown.show {
+  display: flex;
+  justify-content: space-evenly;
+  gap : 40px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .plant-detail-bookmark {
@@ -162,4 +176,20 @@
   border-radius: 8px;
   border: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.plant-detail-buy-now {
+  background: #0b6222;
+  color: #fffdfd;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px;
+}
+
+.plant-detail-buy-now:hover {
+  background: linear-gradient(45deg, #0b6222, #7be08f);
+  color: white; 
+  transform: translateY(-3px);
 }

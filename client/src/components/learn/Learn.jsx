@@ -94,7 +94,10 @@ function Learn() {
   };
 
   if (isLoading) {
-    return <div>Loading plants...</div>;
+    return <div className="loading-screen">
+    <div className="logo-spinner"></div>
+    <p className="loading-text">Welcome to FloraVerse!</p>
+  </div>
   }
 
   if (error) {
