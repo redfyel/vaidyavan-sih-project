@@ -1,0 +1,247 @@
+.pet-corner {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pet-list, .breed-list, .gender-selection, .disease-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .pet-card, .breed-card, .disease-card {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 450px; /* Increased card width */
+    height: 450px; /* Increased card height */
+  }
+  
+  .pet-card:hover, .breed-card:hover, .disease-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pet-card img, .breed-card img {
+    width: 300px; /* Increased image width */
+    height: 300px; /* Increased image height */
+    object-fit: cover;
+    /* border-radius: 50%; */
+    margin-bottom: 15px;
+  }
+  
+  .gender-selection button {
+    margin: 15px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .gender-selection button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .disease-card {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    height: auto;
+  }
+  .disease-list {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .disease-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .disease-card {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .disease-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .disease-name {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .disease-herbs {
+    font-size: 1em;
+    color: #7f8c8d;
+    margin-top: 10px;
+  }
+  
+  .disease-herbs strong {
+    color: #34495e;
+  }
+  
+  .disease-herbs ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .disease-herbs li {
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 768px) {
+    .disease-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .disease-card {
+      width: 90%;
+    }
+  }
+  .disease-list {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .disease-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .disease-card {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .disease-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .disease-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .disease-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .disease-herbs {
+    font-size: 1em;
+    color: #7f8c8d;
+  }
+  
+  .disease-herbs strong {
+    color: #34495e;
+  }
+  
+  .disease-herbs ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .disease-herbs li {
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 768px) {
+    .disease-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .disease-card {
+      width: 90%;
+    }
+  }
+  /* PetCorner.css */
+
+.pet-corner {
+  position: relative;
+}
+
+.search-bar {
+  /* position: fixed; */
+  
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #888;
+}
+
+.pet-list, .breed-list, .breed-details {
+  margin-top: 60px; /* Adjust if needed */
+}
+
+.pet-item, .breed-item, .disease-item {
+  margin-bottom: 20px;
+}
+
+.pet-item img, .breed-item img, .disease-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.selected {
+  border: 2px solid #007bff;
+}

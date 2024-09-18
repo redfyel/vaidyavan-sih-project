@@ -7,6 +7,8 @@ import { FaBars } from 'react-icons/fa';
 import { GiPlantRoots } from "react-icons/gi";
 import { MdOutlineForum } from "react-icons/md";
 import { HiMiniPencilSquare } from "react-icons/hi2";
+import { FaTv } from "react-icons/fa";
+import { MdOutlinePets } from "react-icons/md";
 import './Header.css'; // Ensure to import the CSS file
 
 function Header() {
@@ -42,8 +44,14 @@ function Header() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="community-forum" className="nav-link">
-            <MdOutlineForum /> Community Forum
+            <Link to="pet-corner" className="nav-link">
+            <MdOutlinePets /> Pets Corner
+            </Link>
+          </li>
+          
+          <li className="nav-item">
+            <Link to="remedies-tv" className="nav-link">
+            <FaTv /> Herbal Remedies TV
             </Link>
           </li>
           <li className="nav-item">

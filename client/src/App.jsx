@@ -14,7 +14,9 @@ import HealingCommunities from "./components/community-forum/HealingCommunities"
 import CommunityForum from "./components/community-forum/CommunityForum";
 import HealingJourneys from "./components/community-forum/HealingJourneys";
 import "./App.css";
-
+import OrderHerbs from "./components/orderHerbs/OrderHerbs";
+import YouTubeVideoGallery from "./components/remedies/Remedies";
+import PetCorner from "./components/pet-corner/PetCorner";
 function App() {
   const browserRouter = createBrowserRouter([
     {
@@ -49,7 +51,18 @@ function App() {
           path: "loading",
           element: <LoadingScreen />,
         },
-
+          {
+            path:"quiz",
+            element :<OrderHerbs />,
+          },
+          {
+            path:"remedies-tv",
+            element : <YouTubeVideoGallery />,
+          },
+          {
+            path: "pet-corner",
+            element: <PetCorner />,
+          },
         {
           path: "order-plant/:name",
           element: <OrderPlant />,
