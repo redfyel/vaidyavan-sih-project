@@ -6,6 +6,7 @@ import { CiLogin } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa'; 
 import { GiPlantRoots } from "react-icons/gi";
 import { HiMiniPencilSquare } from "react-icons/hi2";
+import { FaTv } from "react-icons/fa";
 import './Header.css'; // Ensure to import the CSS file
 
 function Header() {
@@ -38,6 +39,12 @@ function Header() {
           <li className="nav-item">
             <Link to="guided-tours" className="nav-link">
               <GiPlantRoots /> Guided Tours
+            </Link>
+          </li>
+          
+          <li className="nav-item">
+            <Link to="remedies-tv" className="nav-link">
+            <FaTv /> Herbal Remedies TV
             </Link>
           </li>
           <li className="nav-item">

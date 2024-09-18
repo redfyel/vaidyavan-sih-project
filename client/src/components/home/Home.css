@@ -197,6 +197,35 @@ header, .header-content, .model-viewer-container, .products-container {
   letter-spacing: 2px;
   line-height: 1.3;
 }
+/* Dosha Description Container */
+.dosha-description {
+  font-size: 1.25em;
+  color: #555;
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start with a slight upward offset */
+  animation: fadeInUp 1s forwards; /* Apply animation */
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* End fully visible */
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
+/* Hover effect for extra interactivity */
+.dosha-description:hover {
+  color: #333; /* Darker color on hover */
+  transform: scale(1.02); /* Slightly enlarge text */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
 
 .dosha-cards {
   display: flex;

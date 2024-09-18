@@ -45,7 +45,7 @@ const Home = () => {
           <div className="cta-buttons">
             <button className="cta-button learn-more">Learn More</button>
             {/* <button className="cta-button explore">Explore Our Products</button> */}
-            <button className="cta-button start-quiz" onClick={openQuizInNewTab}>Start Quiz</button>
+            <button className="cta-button start-quiz" onClick={openQuizInNewTab}>Unveil Your Balance</button>
           </div>
         </div>
         <div className="model-viewer-container">
@@ -56,7 +56,10 @@ const Home = () => {
       {/* <About /> */}
       <RotatingImages />
       <section className="dosha-section">
-        <h2>Understanding the Doshas</h2>
+        <h2>Discover Your Dosha</h2>
+        <p class="dosha-description">
+    Balancing these three doshas will lead to optimal health, as all diseases are categorized under Vata, Pitta, and Kapha imbalances.
+  </p>
         <div className="dosha-cards">
           {doshas.map((dosha) => (
             <div className="dosha-card" key={dosha.name}>
@@ -68,7 +71,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <button className="cta-button start-quiz" onClick={openQuizInNewTab}>Start Quiz</button>
+        <button className="cta-button start-quiz" onClick={openQuizInNewTab}>Unveil Your Balance</button>
       </section>
       <Contact />
       <Footer />

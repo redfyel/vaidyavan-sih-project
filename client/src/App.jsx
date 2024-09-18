@@ -10,6 +10,7 @@ import LoadingScreen from "./components/loading-screen/LoadingScreen";
 import OrderPlant from "./components/plant-detail/OrderPlant";
 import "./App.css";
 import OrderHerbs from "./components/orderHerbs/OrderHerbs";
+import YouTubeVideoGallery from "./components/remedies/Remedies";
 
 function App() {
   const browserRouter = createBrowserRouter([
@@ -47,6 +48,10 @@ function App() {
           {
             path:"quiz",
             element :<OrderHerbs />,
+          },
+          {
+            path:"remedies-tv",
+            element : <YouTubeVideoGallery />,
           },
         {
           path: "order-plant/:name",
