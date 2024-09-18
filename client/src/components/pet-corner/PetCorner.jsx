@@ -7,7 +7,7 @@ const PetCorner = () => {
   const [selectedGender, setSelectedGender] = useState(null);
   const [searchTermPet, setSearchTermPet] = useState('');
   const [searchTermBreed, setSearchTermBreed] = useState('');
-  const [isFirstPage, setIsFirstPage] = useState(true); // Track if on the first page
+  const [searchTerm, setSearchTerm] = useState('');
 
 
   // Pet data
@@ -16,7 +16,7 @@ const PetCorner = () => {
     { id: 'cat', name: 'Cat', image: 'https://t4.ftcdn.net/jpg/02/92/96/37/360_F_292963748_5hsKvthWEeFGmj5oOe8O28CN1gjxf3Vb.jpg' },
     { id: 'Bird', name: 'Bird', image: 'https://t3.ftcdn.net/jpg/06/21/49/96/360_F_621499629_oLycksybK00ws9LSHE3mRPib47F46zpg.jpg' },
     { id: 'rabbit', name: 'Rabbit', image: 'https://t4.ftcdn.net/jpg/05/71/77/01/360_F_571770110_Ma0yElFc0Tpn1nWKOolJa3nvx0VIIG0F.jpg' },
-    { id: 'Fish', name: 'Fish', image: 'https://t4.ftcdn.net/jpg/05/71/77/01/360_F_571770110_Ma0yElFc0Tpn1nWKOolJa3nvx0VIIG0F.jpg' },
+    { id: 'Fish', name: 'Fish', image: 'https://img.freepik.com/premium-photo/small-fish-with-white-background-yellow-ring-around-bottom_720722-8638.jpg?w=740' },
     { id: 'hamster', name: 'Hamster', image: 'https://img.freepik.com/premium-photo/hamster-isolated-white-background_35691-15371.jpg' },
     { id: 'guinea', name: 'Guninea Pig', image: 'https://img.freepik.com/premium-photo/guinea-pig-white-background_369656-144.jpg' },
     { id: 'lizard', name: 'Lizard', image: 'https://t3.ftcdn.net/jpg/02/29/60/56/360_F_229605617_tPHDcdvNjXoyuSILq5TaUQT0jXydRnIA.jpg' },
@@ -30,7 +30,12 @@ const PetCorner = () => {
     dog: [
       { id: 'labrador', name: 'Labrador', image: 'https://img.freepik.com/premium-photo/happy-adult-labrador-retriever-dog-white_772720-711.jpg' },
       { id: 'golden-retriever', name: 'Golden Retriever', image: 'https://t4.ftcdn.net/jpg/00/21/57/91/360_F_21579135_noOKwlwfbcUDzvhjrufreBCaw262w2ma.jpg' },
-      { id: 'german-shepherd', name: 'German Shepherd', image: 'https://media.istockphoto.com/id/120526947/photo/side-view-of-german-shepherd-standing-white-background.jpg?s=612x612&w=0&k=20&c=B4FS9jr3DYfUHc-nNurQ03igQIvV4keloUnYH78GTxA=' }
+      { id: 'german-shepherd', name: 'German Shepherd', image: 'https://media.istockphoto.com/id/120526947/photo/side-view-of-german-shepherd-standing-white-background.jpg?s=612x612&w=0&k=20&c=B4FS9jr3DYfUHc-nNurQ03igQIvV4keloUnYH78GTxA=' },
+      { id: 'german-shepherd', name: 'Whippet', image: 'https://img.freepik.com/premium-photo/graceful-whippet-dog-white-background-displaying-breed-s-elegance-athleticism_826582-2514.jpg' },
+           { id: 'german-shepherd', name: 'Beagle', image: 'https://static.vecteezy.com/system/resources/thumbnails/033/166/177/small_2x/purebred-pedigree-beagle-puppy-on-clean-white-background-this-adorable-charm-young-dog-is-ideal-for-banners-advertisements-posters-ai-generated-photo.jpeg' },
+           { id: 'german-shepherd', name: 'Bull dog', image: 'https://www.warrenphotographic.co.uk/photography/bigs/45608-Blue-and-white-French-Bulldog-white-background.jpg' }
+   
+   
     ]
   };
 
@@ -41,7 +46,7 @@ const PetCorner = () => {
         diseases: [
           { name: 'Hip Dysplasia', herbs: ['Turmeric', 'Calendula'], image: 'https://tse2.mm.bing.net/th?id=OIP.wLvZsz6ory0m7GQayWD3mgHaEc&pid=Api&P=0&h=180' },
           { name: 'Obesity', herbs: ['Arnica', 'Ginseng'], image: 'https://tse2.mm.bing.net/th?id=OIP.eqfx0s_-9UmWjVLSczuXrgHaEb&pid=Api&P=0&h=180' },
-          { name: 'Ear Infections', herbs: ['Garlic', 'Calendula'], image: 'https://tse1.mm.bing.net/th?id=OIP.jZYloGvicVA4SzcuKNt-XQHaE8&pid=Api&P=0&h=180' },
+          { name: 'Ear Infections', herbs: ['Boswellia', 'Calendula'], image: 'https://tse1.mm.bing.net/th?id=OIP.jZYloGvicVA4SzcuKNt-XQHaE8&pid=Api&P=0&h=180' },
           { name: 'Elbow Dysplasia', herbs: ['Boswellia', 'Devil’s Claw'], image: 'https://www.dogster.com/wp-content/uploads/2024/07/elbow-of-labrador-retriever_9gifts_Shutterstock.jpg' },
           { name: 'Progressive Retinal Atrophy', herbs: ['Bilberry', 'Eyebright'], image: 'https://tse1.mm.bing.net/th?id=OIP.WQRwCtwHk31cj7nwwG4zxQHaE8&pid=Api&P=0&h=180' },
           { name: 'Exercise-Induced Collapse', herbs: ['Ashwagandha', 'Ginseng'], image: 'https://tse3.mm.bing.net/th?id=OIP.JWKdgHv7LyEWGjAaHTDqVwHaE8&pid=Api&P=0&h=180' },
@@ -123,8 +128,17 @@ const PetCorner = () => {
 
   // Render
   return (
+    
     <div className="pet-corner">
       {/* Pet selection */}
+       {/* Static search bar */}
+       <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search for a pet or breed..."
+          disabled
+        />
+      </div>
       {!selectedPet && (
         <div className="pet-list">
           {pets.map(pet => (

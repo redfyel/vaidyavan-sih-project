@@ -204,4 +204,44 @@
       width: 90%;
     }
   }
+  /* PetCorner.css */
+
+.pet-corner {
+  position: relative;
+}
+
+.search-bar {
+  /* position: fixed; */
   
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #888;
+}
+
+.pet-list, .breed-list, .breed-details {
+  margin-top: 60px; /* Adjust if needed */
+}
+
+.pet-item, .breed-item, .disease-item {
+  margin-bottom: 20px;
+}
+
+.pet-item img, .breed-item img, .disease-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.selected {
+  border: 2px solid #007bff;
+}
