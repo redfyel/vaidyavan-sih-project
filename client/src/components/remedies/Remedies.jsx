@@ -112,7 +112,7 @@ const YouTubeVideoGallery = () => {
           <div key={video.id} className="video-item">
             <iframe
               width="560"
-              height="1000"
+              height="300"
               src={`https://www.youtube.com/embed/${video.id}`}
               title={video.title}
               frameBorder="0"

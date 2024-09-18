@@ -7,6 +7,7 @@ import { FaBars } from 'react-icons/fa';
 import { GiPlantRoots } from "react-icons/gi";
 import { HiMiniPencilSquare } from "react-icons/hi2";
 import { FaTv } from "react-icons/fa";
+import { MdOutlinePets } from "react-icons/md";
 import './Header.css'; // Ensure to import the CSS file
 
 function Header() {
@@ -39,6 +40,11 @@ function Header() {
           <li className="nav-item">
             <Link to="guided-tours" className="nav-link">
               <GiPlantRoots /> Guided Tours
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="pet-corner" className="nav-link">
+            <MdOutlinePets /> Pets Care
             </Link>
           </li>
           

@@ -11,7 +11,7 @@ import OrderPlant from "./components/plant-detail/OrderPlant";
 import "./App.css";
 import OrderHerbs from "./components/orderHerbs/OrderHerbs";
 import YouTubeVideoGallery from "./components/remedies/Remedies";
-
+import PetCorner from "./components/pet-corner/PetCorner";
 function App() {
   const browserRouter = createBrowserRouter([
     {
@@ -52,6 +52,10 @@ function App() {
           {
             path:"remedies-tv",
             element : <YouTubeVideoGallery />,
+          },
+          {
+            path: "pet-corner",
+            element: <PetCorner />,
           },
         {
           path: "order-plant/:name",
