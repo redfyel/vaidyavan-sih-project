@@ -6,10 +6,16 @@ import RotatingImages from './RotatingImages';
 import Contact from './Contact';
 import Footer from './Footer';
 import Chatbot from './ChatBot';
+import OrderHerbs from '../orderHerbs/OrderHerbs';
 import './Home.css';
 import ModelViewer from './ModelViewer'; 
 
 const Home = () => {
+  // Function to open quiz in a new tab
+  const openQuizInNewTab = () => {
+    window.open('/quiz', '_blank');
+  };
+
   return (
     <header>
       <Helmet>
@@ -22,7 +28,8 @@ const Home = () => {
           <p className="header-subtitle">Discover the Best Herbal Medicines for a <span className="highlight">Healthier You</span></p>
           <div className="cta-buttons">
             <button className="cta-button learn-more">Learn More</button>
-            <button className="cta-button explore">Explore Our Products</button>
+            {/* <button className="cta-button explore">Explore Our Products</button> */}
+            <button className="cta-button start-quiz" onClick={openQuizInNewTab}>Start Quiz</button>
           </div>
         </div>
         <div className="model-viewer-container">
@@ -31,8 +38,8 @@ const Home = () => {
       </div>
       <Products />
       {/* <About /> */}
-      
       <RotatingImages />
+      
       <Contact />
       <Footer />
       <Chatbot />

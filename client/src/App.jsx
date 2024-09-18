@@ -9,6 +9,7 @@ import GuidedTourGarden from "./components/guided-tour-garden/GuidedTourGarden";
 import LoadingScreen from "./components/loading-screen/LoadingScreen";
 import OrderPlant from "./components/plant-detail/OrderPlant";
 import "./App.css";
+import OrderHerbs from "./components/orderHerbs/OrderHerbs";
 
 function App() {
   const browserRouter = createBrowserRouter([
@@ -43,7 +44,10 @@ function App() {
           path: "loading",
           element: <LoadingScreen />,
         },
-
+          {
+            path:"quiz",
+            element :<OrderHerbs />,
+          },
         {
           path: "order-plant/:name",
           element: <OrderPlant />,

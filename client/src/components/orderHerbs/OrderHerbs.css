@@ -1,0 +1,334 @@
+/* Ayurvedic Quiz Styles */
+.ayurvedic-quiz {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  h3 {
+    color: #555;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  .start-quiz-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+  }
+  
+  .start-quiz-button:hover {
+    background-color: #45a049;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .option-button {
+    background-color: white;
+    color: #333;
+    border: 2px solid green;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+  }
+  
+  .option-button:hover {
+    background-color: #e6ffe6;
+    border-color: #45a049;
+  }
+  
+  .option-button:active {
+    background-color: #45a049;
+    color: white;
+  }
+  
+  /* Result Section */
+  .result-container {
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .pie-chart-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .pie-chart-container .recharts-surface {
+    margin-top: 20px;
+  }
+  
+  /* Dos and Don'ts Cards */
+  .dos-donts {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .dos-card, .donts-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dos-card {
+    border: 2px solid #4CAF50;
+  }
+  
+  .donts-card {
+    border: 2px solid #F44336;
+  }
+  
+  .dos-card:hover, .donts-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dos-card h4, .donts-card h4 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .dos-card ul, .donts-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dos-card li, .donts-card li {
+    margin: 5px 0;
+  }
+  
+  /* Fade In Animation for Result */
+  .fade-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .option-button {
+      width: 100%;
+    }
+    
+    .dos-card, .donts-card {
+      width: 90%;
+    }
+  }
+  /* OrderHerbs.css */
+
+/* Styling for the result container */
+.result-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Dosha profile header */
+  .dosha-header {
+    margin-bottom: 20px;
+  }
+  
+  .dosha-header h2 {
+    font-size: 1.8em;
+    margin: 0;
+  }
+  
+  .dosha-badge {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+  
+  /* Pie chart container */
+  .pie-chart-container {
+    margin: 20px auto;
+  }
+  
+  /* Styling for Dos and Don'ts cards */
+  .dos-donts {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .dos-card, .donts-card {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 45%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dos-card h4 {
+    color: #4CAF50; /* Green for Dos */
+    margin-bottom: 10px;
+  }
+  
+  .donts-card h4 {
+    color: #F44336; /* Red for Don'ts */
+    margin-bottom: 10px;
+  }
+  
+  .dos-card ul, .donts-card ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .dos-card li, .donts-card li {
+    margin-bottom: 8px;
+  }
+  
+  /* OrderHerbs.css */
+
+/* Styling for the result container */
+.result-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Dosha profile header */
+  .dosha-header {
+    margin-bottom: 20px;
+  }
+  
+  .dosha-header h2 {
+    font-size: 1.8em;
+    margin: 0;
+  }
+  
+  .dosha-badge {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5em;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dosha-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Pie chart container */
+  .pie-chart-container {
+    margin: 20px auto;
+  }
+  
+  /* Styling for Dos and Don'ts cards */
+  .dos-donts {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .dos-card, .donts-card {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 45%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dos-card:hover, .donts-card:hover {
+    background-color: #e0ffe0; /* Light green for Dos */
+    transform: translateY(-5px);
+  }
+  
+  .dos-card {
+    background: #dff0d8;
+  }
+  
+  .donts-card {
+    background: #fbdada;
+  }
+  
+  .dos-card h4 {
+    color: #4CAF50; /* Green for Dos */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .donts-card h4 {
+    color: #F44336; /* Red for Don'ts */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dos-card ul, .donts-card ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .dos-card li, .donts-card li {
+    margin-bottom: 8px;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dos-card li:hover, .donts-card li:hover {
+    color: #2E8B57; /* Dark green for hover on Dos */
+    transform: translateX(5px);
+  }
+  
