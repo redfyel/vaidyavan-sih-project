@@ -44,7 +44,7 @@ function Header() {
           </li>
           <li className="nav-item">
             <Link to="pet-corner" className="nav-link">
-            <MdOutlinePets /> Pets Care
+            <MdOutlinePets /> Pets Corner
             </Link>
           </li>
           
