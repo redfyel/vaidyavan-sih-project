@@ -110,7 +110,7 @@ function Learn() {
         <>
           <div className="search-bar-container">
             <div className="search-bar-wrapper">
-              <div className="search-icon"><FaSearch /></div>
+              <div className="search-icon1"><FaSearch /></div>
               <input
                 type="text"
                 placeholder="Search for a herb..."

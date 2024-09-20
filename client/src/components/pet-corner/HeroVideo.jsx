@@ -27,7 +27,7 @@ const HeroVideo = () => {
       </video>
       <div className="video-overlay"></div>
       <div className="hero-content">
-        <h1>Welcome to Pet Corner</h1>
+        <h1>Welcome to Pets Corner</h1>
         <p>Discover natural remedies for common pet concerns and get personalized recommendations.</p>
         <button className="explore-button">Explore Remedies</button>
       </div>

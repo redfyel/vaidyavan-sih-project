@@ -134,18 +134,24 @@ bottom: 15px;
     max-width: 250px;
     max-height: 300px;
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .remedy-preview p {
     color: rgb(14, 46, 14);
 }
 
+
 .submit-btn {
     background-color: #4b742d;
     color: #fff;
     width: 25%;
     padding: 10px 0;
+    display: flex;
+
 }
+
+
 
 .submit-btn:hover {
     background-color: #3d6530;
