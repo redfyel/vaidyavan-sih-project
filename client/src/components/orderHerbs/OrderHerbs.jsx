@@ -1,14 +1,14 @@
-
-  
-  
-
-
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './OrderHerbs.css';
+import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
+// Import your audio
+import video1 from '../../assets/videos/v6.mp4';
+
+import audioFile from '../../assets/audio/a1.mp3';
+
 
 const OrderHerbs = () => {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -161,35 +161,46 @@ const OrderHerbs = () => {
     }
   };
 
+
   const handleAnswer = (answer) => {
     const updatedAnswers = [...answers, answer];
     setAnswers(updatedAnswers);
-  
+
     if (quizIndex < questions.length - 1) {
       setQuizIndex(quizIndex + 1);
     } else {
       handleQuizSubmission(updatedAnswers);
     }
   };
-  
+
+  const [isBurstVisible, setIsBurstVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsBurstVisible(true);
+    }, 500); // Delay for burst animation to trigger
+  }, []);
+
   const handleQuizSubmission = (finalAnswers) => {
     const doshaCount = { Vata: 0, Pitta: 0, Kapha: 0 };
-  
-    finalAnswers.forEach(answer => {
+
+    finalAnswers.forEach((answer) => {
       doshaCount[answer.dosha] += 1;
     });
-  
-    const maxDosha = Object.keys(doshaCount).reduce((a, b) => doshaCount[a] > doshaCount[b] ? a : b);
-  
+
+    const maxDosha = Object.keys(doshaCount).reduce((a, b) =>
+      doshaCount[a] > doshaCount[b] ? a : b
+    );
+
     setResult({
       dosha: maxDosha,
-      details: doshaDetails[maxDosha]
+      details: doshaDetails[maxDosha],
     });
     setQuizStarted(false);
   };
-  
+
   const doshaCount = { Vata: 0, Pitta: 0, Kapha: 0 };
-  answers.forEach(answer => {
+  answers.forEach((answer) => {
     doshaCount[answer.dosha] += 1;
   });
 
@@ -202,10 +213,73 @@ const OrderHerbs = () => {
   const fadeIn = useSpring({ opacity: result ? 1 : 0 });
   const slideUp = useSpring({ transform: result ? 'translateY(0)' : 'translateY(50px)' });
 
-  const COLORS = ['#ADD8E6', '#FFA500', '#2E8B57'];  // Colors for Vata, Pitta, Kapha
+  const COLORS = ['#ADD8E6', '#FFA500', '#2E8B57']; // Colors for Vata, Pitta, Kapha
+  const [audioMuted, setAudioMuted] = useState(true); // Start with muted audio
 
+  useEffect(() => {
+    const audio = document.getElementById('background-audio');
+    
+    // Automatically try to play the muted audio
+    const playAudio = () => {
+      audio.play().catch(error => {
+        console.error("Autoplay was prevented, user interaction is required:", error);
+      });
+    };
+
+    playAudio(); // Attempt to autoplay muted audio
+  }, []);
+
+  // Function to unmute the audio on user interaction
+  const unmuteAudio = () => {
+    const audio = document.getElementById('background-audio');
+    audio.muted = false;  // Unmute the audio
+    setAudioMuted(false);  // Update state to reflect the unmuted status
+    audio.play();  // Ensure the audio plays after unmuting
+  };
   return (
     <div className="ayurvedic-quiz">
+      {/* Video Background */}
+      <video autoPlay muted loop className="background-video">
+        <source src={video1} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+       {/* Audio element: starts muted */}
+       <audio id="background-audio" loop autoPlay muted>
+        <source src={audioFile} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      {/* Add a button or other user interaction to unmute the audio */}
+      {audioMuted && (
+        <button onClick={unmuteAudio} className="unmute-button">
+         
+        </button>
+      )}
+      {/* Transparent button for unmuting the audio */}
+      {audioMuted && (
+        <button 
+          onClick={unmuteAudio} 
+          style={{
+            position: 'absolute',  // Positioned relative to the container
+            top: '0',              // You can adjust the positioning
+            left: '0',             // Make sure it doesn't overlap crucial content
+            width: '100%',         // Covers the whole screen or defined area
+            height: '100%',        // Covers the whole screen or defined area
+            opacity: '0',          // Fully transparent
+            zIndex: '999',         // Make sure it's above other content
+            cursor: 'pointer',     // Still shows as a clickable area
+            border: 'none',
+            background: 'none'
+          }}
+            // Accessible label for screen readers
+        >
+          Unmute Audio
+        </button>
+      )}
+
+
+      {/* Quiz Content */}
       {!quizStarted && !result && (
         <button onClick={() => setQuizStarted(true)} className="start-quiz-button">
           Start Quiz
@@ -229,11 +303,18 @@ const OrderHerbs = () => {
         </TransitionGroup>
       )}
 
-{result && (
+      {result && (
         <animated.div style={slideUp} className="result-container">
           <div className="dosha-header">
-            <h2>Your Dosha Profile</h2>
-            <div className="dosha-badge" style={{ backgroundColor: COLORS[Object.keys(doshaDetails).indexOf(result.dosha)] }}>
+          <h2 className={`dosha-heading ${isBurstVisible ? 'visible' : ''}`}>
+        Dosha Profile
+      </h2>
+            <div
+              className="dosha-badge"
+              style={{
+                backgroundColor: COLORS[Object.keys(doshaDetails).indexOf(result.dosha)],
+              }}
+            >
               <h3>{result.dosha}</h3>
             </div>
           </div>

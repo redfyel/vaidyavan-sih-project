@@ -51,4 +51,15 @@ h2:hover {
       transform: translateX(-100%);
     }
   }
-  
+  .overlay p {
+    margin: 0;
+    font-size: 1.1rem; /* Adjust font size as needed */
+    font-weight: 600;
+    color:#1b6617; /* Slightly lighter green with less opacity for better visibility */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+    text-align: center;
+    line-height: 1.5; /* Improve readability */
+    padding: 15px; /* Padding around text */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background to reduce blurriness */
+}

@@ -1,70 +1,90 @@
-import React from 'react';
-import './Products.css';
+import React, { useState, useEffect } from 'react';
+import './About.css';
+import { FaLeaf, FaUsers, FaPaw, FaBook, FaComments } from 'react-icons/fa';
 
-const Products = () => {
-    const handleMouseMove = (e) => {
-        const card = e.currentTarget;
-        const { width, height, left, top } = card.getBoundingClientRect();
-        const x = (e.clientX - left) / width;
-        const y = (e.clientY - top) / height;
-        const rotateX = (y - 0.5) * 30;
-        const rotateY = (x - 0.5) * -30;
-    
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-        card.style.boxShadow = `${rotateY * 2}px ${rotateX * 2}px 20px rgba(0, 0, 0, 0.3)`;
-      };
-    
-      const handleMouseLeave = (e) => {
-        const card = e.currentTarget;
-        card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-        card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.15)';
-      };
-    
-      return (
-        <div className="tilt-card-container">
-          <div
-            className="tilt-card"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="tilt-card-content">
-              <h2>Explore the Garden</h2>
-              <p>
-                Immerse yourself in the virtual herbal garden filled with a variety of medicinal plants. Discover the beauty and healing properties of each herb as you navigate through the lush greenery.
-              </p>
-             
-            </div>
-          </div>
-    
-          <div
-            className="tilt-card"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="tilt-card-content">
-              <h2>Herb Information</h2>
-              <p>
-                Access detailed information about different herbs, including their uses, benefits, and cultivation techniques. Learn about traditional remedies and modern applications of these natural wonders.
-              </p>
-              
-            </div>
-          </div>
-    
-          <div
-            className="tilt-card"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="tilt-card-content">
-              <h2>Virtual Tour</h2>
-              <p>
-                Take a virtual tour of the 'VaidyaVan' garden from the comfort of your home. Explore different sections, interact with plants, and gain insights into the rich heritage of Ayurveda and herbal medicine.
-              </p>
-             
-            </div>
+
+const About = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoSlide, setAutoSlide] = useState(true);
+
+  const videos = [
+  
+  ];
+
+  const features = [
+    { icon: <FaLeaf />, text: 'Explore a vast collection of herbal remedies' },
+    { icon: <FaUsers />, text: 'Join a community of herbal enthusiasts' },
+    { icon: <FaPaw />, text: 'Get pet care advice for herbal treatments' },
+    { icon: <FaBook />, text: 'Access detailed information about herbs' },
+    { icon: <FaComments />, text: 'Engage in discussions with experts and peers' },
+  ];
+
+  // Auto-slide logic
+  useEffect(() => {
+    let interval;
+    if (autoSlide) {
+      interval = setInterval(() => {
+        goToNext();
+      }, 3000); // Change video every 3 seconds
+    }
+    return () => clearInterval(interval);
+  }, [currentIndex, autoSlide]);
+
+  const goToPrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? videos.length - 1 : prevIndex - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === videos.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  return (
+    <div className="about">
+      <div
+        className="carousel"
+        onMouseEnter={() => setAutoSlide(false)}
+        onMouseLeave={() => setAutoSlide(true)}
+      >
+        <button className="carousel-btn prev" onClick={goToPrev}>&lt;</button>
+        <div className="carousel-wrapper">
+          <div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            {videos.map((video, index) => (
+              <div key={index} className="video-container">
+                <video width="100%" height="auto" controls>
+                  <source src={video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="caption">{features[index]?.text}</div>
+                <div className="icon">{features[index]?.icon}</div>
+              </div>
+            ))}
           </div>
         </div>
-      );
-    };
-    
-export default Products;
+        <button className="carousel-btn next" onClick={goToNext}>&gt;</button>
+      </div>
+
+      <div className="thumbnails">
+        {videos.map((video, index) => (
+          <div key={index} className="thumbnail">
+            <video width="50" height="50" controls>
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ))}
+      </div>
+
+      <div className="indicators">
+        {videos.map((_, index) => (
+          <div
+            key={index}
+            className={`indicator ${currentIndex === index ? 'active' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default About;
