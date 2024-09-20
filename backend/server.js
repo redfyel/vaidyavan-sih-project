@@ -25,11 +25,15 @@ const fsddb = connectionObj.db('plants');
 const usersCollection = fsddb.collection('users')
 const plantsCollection = fsddb.collection('learn_plants')
 const communityCollection = fsddb.collection('community-remedies')
+const petCollection = fsddb.collection('pet-concerns')
+
 
 //share collection obj to APIs
 app.set('usersCollection', usersCollection);
 app.set('plantsCollection', plantsCollection);
 app.set('communityCollection', communityCollection)
+app.set('petCollection', petCollection)
+
 
 
 //assign port number to http server of express app
@@ -41,10 +45,14 @@ catch(err=>console.log("error in db connection", err))
 const userApp =  require('./APIs/userAPI')
 const plantApp = require('./APIs/plantAPI')
 const commApp = require('./APIs/communityAPI')
+const petApp = require('./APIs/petAPI')
+
 
 app.use('/user-api', userApp)
 app.use('/plant-api', plantApp)
 app.use('/community-api', commApp)
+app.use('/pet-api', petApp)
+
 
 
 

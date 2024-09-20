@@ -54,6 +54,12 @@ function Header() {
             <FaTv /> Herbal Remedies TV
             </Link>
           </li>
+      
+          <li className="nav-item">
+            <Link to="community-forum" className="nav-link">
+            <MdOutlineForum /> Community Forum
+            </Link>
+          </li>
           <li className="nav-item">
             <Link to="register" className="nav-link">
               <HiMiniPencilSquare /> Register

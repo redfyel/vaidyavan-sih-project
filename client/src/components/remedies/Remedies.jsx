@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import './Remedies.css';
+import './Remedies.css'; // Use updated CSS
+import { BsSearch } from "react-icons/bs";
+
 
 const videos = [
-  // Previous videos
+
   { id: 'kP7UFUgrnnk', title: 'Herbal Remedy 1', tags: ['herbal', 'remedy'], language: 'English' },
   { id: 'lxZbdh7LEy4', title: 'Herbal Remedy 2', tags: ['remedy'], language: 'English' },
   { id: 'p72difif-Yg', title: 'Natural Healing', tags: ['natural', 'healing'], language: 'English' },
   { id: 'eI4JKV0qZjQ', title: 'DIY Remedy 1', tags: ['DIY'], language: 'English' },
   { id: 'xaBC6elOrOw', title: 'DIY Remedy 2', tags: ['DIY', 'herbal'], language: 'English' },
   { id: 'nVdDm0a6TPY', title: 'Home Remedies', tags: ['home', 'remedies'], language: 'English' },
-  { id: '8O3znvuZcRk', title: 'No Human 1', tags: ['no human'], language: 'English' },
-  { id: 'VvG4jr0HskE', title: 'No Human 2', tags: ['no human'], language: 'English' },
-  { id: 'kROctUzxaZs', title: 'No Human 3', tags: ['no human'], language: 'English' },
-  { id: '2JOV5psevYk', title: 'No Human 4', tags: ['no human'], language: 'English' },
+  { id: '8O3znvuZcRk', title: 'No Human 1', tags: ['tips'], language: 'English' },
+  { id: 'VvG4jr0HskE', title: 'No Human 2', tags: ['tips'], language: 'English' },
+  { id: 'kROctUzxaZs', title: 'No Human 3', tags: ['tips'], language: 'English' },
+  { id: '2JOV5psevYk', title: 'No Human 4', tags: ['tips'], language: 'English' },
 
   // Additional videos
   { id: '544Pt3n1S1E', title: 'Homemade Remedy A', tags: ['homemade'], language: 'Hindi' },
@@ -77,51 +79,78 @@ const YouTubeVideoGallery = () => {
   });
 
   const uniqueTags = [...new Set(videos.flatMap((video) => video.tags))];
-  const uniqueLanguages = ['All', ...new Set(videos.map((video) => video.language))];
+  const uniqueLanguages = ['All Languages', ...new Set(videos.map((video) => video.language))];
 
   return (
-    <div className="youtube-video-gallery">
-      <div className="search-filter">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-        <select onChange={handleLanguageChange} value={selectedLanguage}>
-          {uniqueLanguages.map((language) => (
-            <option key={language} value={language}>
-              {language}
-            </option>
-          ))}
-        </select>
-        <div className="tags">
-          {uniqueTags.map((tag) => (
-            <button
-              key={tag}
-              className={`tag-button ${selectedTags.includes(tag) ? 'selected' : ''}`}
-              onClick={() => handleTagChange(tag)}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
+    <div className="youtube-video-gallery modern-container">
+      {/* Search and Filter Section */}
+      <div className="inof">
+      <h1>Unlock the Secrets of Herbal Healing!</h1>
+      <h2>Dive into our video library and enhance your wellness journey.</h2>
       </div>
-      <div className="video-gallery">
-        {filteredVideos.map((video) => (
-          <div key={video.id} className="video-item">
-            <iframe
-              width="560"
-              height="300"
-              src={`https://www.youtube.com/embed/${video.id}`}
-              title={video.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <h3>{video.title}</h3>
-          </div>
-        ))}
+      
+      <div className="search-filter modern-search-filter">
+  <div className="search-icon">
+    <BsSearch />
+  </div>
+  <input 
+    type="text"
+    placeholder="Search remedies..."
+    value={searchTerm}
+    onChange={handleSearchChange}
+    className="modern-search-input"
+  />
+  <select onChange={handleLanguageChange} value={selectedLanguage} className="modern-select">
+    {uniqueLanguages.map((language) => (
+      <option key={language} value={language}>
+        {language}
+      </option>
+    ))}
+  </select>
+  <div className="tags modern-tags">
+    {uniqueTags.map((tag) => (
+      <button
+        key={tag}
+        className={`tag-button ${selectedTags.includes(tag) ? 'selected' : ''}`}
+        onClick={() => handleTagChange(tag)}
+      >
+        {tag}
+      </button>
+    ))}
+  </div>
+  {selectedTags.length > 0 && (
+    <div className="selected-filters">
+      {selectedTags.map((tag) => (
+        <span key={tag} className="selected-tag">
+          {tag} <button onClick={() => handleTagChange(tag)}>✕</button>
+        </span>
+      ))}
+    </div>
+  )}
+</div>
+
+
+      {/* Video Gallery Section */}
+      <div className="video-gallery modern-video-gallery">
+        {filteredVideos.length > 0 ? (
+          filteredVideos.map((video) => (
+            <div key={video.id} className="video-item modern-video-card">
+              <iframe
+                width="100%"
+                height="200"
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="modern-iframe"
+              ></iframe>
+              <h3 className="modern-video-title">Click to Know More</h3>
+            </div>
+          ))
+        ) : (
+          <p className="no-results">No videos found matching your filters</p>
+        )}
       </div>
     </div>
   );
