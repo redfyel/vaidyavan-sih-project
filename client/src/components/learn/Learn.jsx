@@ -147,7 +147,7 @@ function Learn() {
 
       {showModal && (
         <div className="modal-backdrop" onClick={handleCloseModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content1" onClick={(e) => e.stopPropagation()}>
             <h2>Upload a Plant Image</h2>
             <p>Please upload an image of the herb you want to identify.</p>
             <input

@@ -84,7 +84,7 @@ function OrderPlant() {
                     <button type="button" onClick={() => handleQuantityChange(1)}>+</button>
                   </div>
                 </div>
-                <button type="submit" className="submit-btn">Submit Order</button>
+                <button type="submit" className="submit-btn1">Submit Order</button>
               </form>
             </>
           ) : (
