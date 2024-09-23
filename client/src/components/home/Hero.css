@@ -28,7 +28,7 @@
   }
   
   .hero-cta-button {
-    background-color: #8BC34A; /* Light green */
+    background-color: #8BC34A; 
     color: white;
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -38,6 +38,6 @@
   }
   
   .hero-cta-button:hover {
-    background-color: #6DAF3A; /* Darker green */
+    background-color: #6DAF3A;
   }
   

@@ -1,49 +1,41 @@
-/* General Styles */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Carousel Container */
+
 .carousel-container {
-  position: relative; /* Allows absolute positioning for slides */
-  height: 100vh; /* Full height */
-  width: 100%; /* Full width */
-  overflow: hidden; /* Prevents overflow */
-  /* Below the navbar */
+  position: relative; 
+  height: 100vh; 
+  width: 100%; 
+  overflow: hidden; 
 }
 
-/* Full-Page Carousel Styles */
+
 .slide {
-  /* position: absolute; */
-  /* top: 0;
-  left: 0; */
   width: 100%;
   height: 100%;
-  opacity: 0; /* Default to hidden */
+  opacity: 0; 
   transition: opacity 0.5s ease-in-out;
 }
 
 .slide.active {
-  opacity: 1; /* Show the active slide */
+  opacity: 1;
 }
 
 .background-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the entire area */
+  object-fit: cover; 
 }
 
-/* Overlay Styles */
+
 .overlay {
-  /* position: absolute;
-  top: 50%;
-  left: 50%; */
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  z-index: 2; /* Above the image */
+  z-index: 2; 
 }
 
 .overlay h1 {
@@ -70,14 +62,14 @@ body {
   background-color: #2e7d32;
 }
 
-/* Carousel Controls */
+
 .carousel-controls {
   position: absolute;
   top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: 3; /* Above everything */
+  z-index: 3; 
 }
 
 .control-btn {
@@ -93,37 +85,36 @@ body {
 .control-btn:hover {
   background: rgba(0, 0, 0, 0.8);
 }
-/* Carousel Container */
+
 .carousel-container {
-  position: relative; /* Allows absolute positioning for slides */
-  height: 60vh; /* Adjust height as necessary */
-  width: 100%; /* Full width */
-  overflow: hidden; /* Prevents overflow */
-  z-index: 1; /* Below the navbar */
+  position: relative; 
+  height: 60vh; 
+  width: 100%;
+  overflow: hidden; 
+  z-index: 1; 
 }
 
-/* Full-Page Carousel Styles */
+
 .slide {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* Default to hidden */
+  opacity: 0; 
   transition: opacity 0.5s ease-in-out;
 }
 
 .slide.active {
-  opacity: 1; /* Show the active slide */
+  opacity: 1; 
 }
 
 .background-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the entire area */
+  object-fit: cover; 
 }
 
-/* Overlay Styles */
 .overlay {
   position: absolute;
   top: 50%;
@@ -131,70 +122,68 @@ body {
   transform: translate(-50%, -50%);
   color: black;
   text-align: center;
-  z-index: 2; /* Above the image */
+  z-index: 2;
 }
 
-/* Carousel Controls */
+
 .carousel-controls {
   position: absolute;
   top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: 3; /* Above everything */
+  z-index: 3;
 }
 .header-container {
-  /* Add any styles you have */
-  padding-bottom: 20px; /* Space below the header */
-}
-/* Carousel Container */
-.carousel-container {
-  position: relative; /* Keeps the carousel relative */
-  height: 60vh; /* Adjust height as necessary */
-  width: 100%; /* Full width */
-  overflow: hidden; /* Prevents overflow */
-  margin-top: 20px; /* Add margin-top for separation */
-  z-index: 1; /* Below the navbar */
+  padding-bottom: 20px; 
 }
 
-/* Full-Page Carousel Styles */
+.carousel-container {
+  position: relative; 
+  height: 60vh; 
+  width: 100%; 
+  overflow: hidden; 
+  margin-top: 20px; 
+  z-index: 1;
+}
+
 .slide {
-  position: absolute; /* Positioned absolutely within the container */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* Default to hidden */
+  opacity: 0; 
   transition: opacity 0.5s ease-in-out;
 }
 
 .slide.active {
-  opacity: 1; /* Show the active slide */
+  opacity: 1; 
 }
 
 .background-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the entire area */
+  object-fit: cover; 
 }
 
-/* Overlay Styles */
+
 .overlay {
-  position: absolute; /* Positioned absolutely within the slide */
+  position: absolute; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
   text-align: center;
-  z-index: 2; /* Above the image */
+  z-index: 2; 
 }
 
-/* Carousel Controls */
+
 .carousel-controls {
   position: absolute;
   top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: 3; /* Above everything */
+  z-index: 3; 
 }

@@ -7,7 +7,7 @@ import Products from './Products';
 import RotatingImages from './RotatingImages';
 import Contact from './Contact';
 import Footer from './Footer';
-import Chatbot from './ChatBot';
+import Chatbot from '../home/Chatbot';
 import OrderHerbs from '../orderHerbs/OrderHerbs';
 import './Home.css';
 import ModelViewer from './ModelViewer'; 
@@ -31,7 +31,6 @@ const doshas = [
 ];
 
 const Home = () => {
-  // Function to open quiz in a new tab
   const openQuizInNewTab = () => {
     window.open('/quiz', '_blank');
   };
@@ -40,7 +39,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsBurstVisible(true);
-    }, 500); // Delay for burst animation to trigger
+    }, 500);
   }, []);
   return (
     <header>
@@ -62,13 +61,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About Section */}
       <About />
-
-      {/* Carousel */}
-      {/* <div style={{ marginTop: '20px' }}>
-        <Products />
-      </div> */}
 
       <RotatingImages />
       <section className="dosha-section">
@@ -82,15 +75,13 @@ const Home = () => {
   {doshas.map((dosha) => (
     <div className="dosha-card" key={dosha.name}>
       <div className="dosha-card-inner">
-        {/* Front of the card (Image) */}
         <div className="dosha-card-front">
           <img src={dosha.image} alt={dosha.name} className="dosha-image" />
         </div>
         
-        {/* Back of the card (Text) */}
+
         <div className="dosha-card-back">
           <div className="dosha-content">
-            {/* <h3 className="dosha-name">{dosha.name}</h3> */}
             <p className="dosha-description">{dosha.description}</p>
           </div>
         </div>

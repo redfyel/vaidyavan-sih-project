@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVWYDLr9xyyajkGtXxYrDLr-q7uJVTU8Rz0Q&s'); /* Adding subtle plant background */
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVWYDLr9xyyajkGtXxYrDLr-q7uJVTU8Rz0Q&s');
 }
 
 .register-header {
@@ -93,7 +93,7 @@
   }
 }
 
-/* Progress bar container */
+
 .progress-bar-container {
   margin-top: 20px;
   width: 100%;
@@ -103,7 +103,7 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Progress bar */
+
 .progress-bar {
   height: 20px;
   background-color: #66bb6a;
@@ -116,7 +116,7 @@
   color: #388e3c;
   margin-top: 10px;
 }
-/* Register.css */
+
 
 .progress {
   height: 10px;

@@ -63,11 +63,11 @@ const PetCorner = () => {
 
   const closeQuizPopup = () => {
     setIsQuizOpen(false);
-    handleTypeformSubmit(); // Display quiz results when the quiz is closed
+    handleTypeformSubmit(); 
   };
 
   const handleTypeformSubmit = () => {
-    // Simulated result data (replace with actual quiz data handling)
+ 
     const simulatedResult = {
       petType: "Dog",
       concern: "Allergies",
@@ -234,7 +234,7 @@ const PetCorner = () => {
               X
             </button>
             <iframe
-              src="https://1s9dpgh3zut.typeform.com/to/hrr5DVBe" // Replace with your Typeform URL
+              src="https://1s9dpgh3zut.typeform.com/to/hrr5DVBe"
               width="100%"
               height="100%"
               frameBorder="0"

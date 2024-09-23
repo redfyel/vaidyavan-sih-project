@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 60px 40px;
-  /* background-color: #f5f5f5; */
   border-bottom: 3px solid #1b6617;
 }
 
@@ -78,7 +77,6 @@
   animation: fadeInRight 1s ease-out;
 }
 
-/* Animation for text and model */
 @keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -105,10 +103,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 60px 40px;
-  /* background-color: #f5f5f5; */
-  /* Ensure no border or bottom line */
+
   border-bottom: none;
-  margin-bottom: 0; /* Reset any bottom margin */
+  margin-bottom: 0; 
 }
 
 .model-viewer-container {
@@ -116,20 +113,14 @@
   max-width: 50%;
   padding-left: 30px;
   animation: fadeInRight 1s ease-out;
-  /* Ensure no border or bottom line */
   border-bottom: none;
   margin-bottom: 0;
 }
 
-/* Additional global reset if necessary */
+
 header, .header-content, .model-viewer-container, .products-container {
   border-bottom: none;
   margin-bottom: 0;
-}
-/* Home.css */
-
-.header-container {
-  /* Existing styles for header */
 }
 
 .dosha-section {
@@ -178,13 +169,9 @@ header, .header-content, .model-viewer-container, .products-container {
   font-size: 1rem;
   color: #555;
 }
-/* Home.css */
 
-/* Dosha Section */
 .dosha-section {
   padding: 60px 40px;
-  /* background-color: #f5f5f5; */
-  
   text-align: center;
 }
 
@@ -197,7 +184,7 @@ header, .header-content, .model-viewer-container, .products-container {
   letter-spacing: 2px;
   line-height: 1.3;
 }
-/* Dosha Description Container */
+
 .dosha-description {
   font-size: 1.25em;
   color: #555;
@@ -207,31 +194,30 @@ header, .header-content, .model-viewer-container, .products-container {
   padding: 0 20px;
   text-align: center;
   font-family: 'Arial', sans-serif;
-  opacity: 0; /* Start hidden */
-  transform: translateY(20px); /* Start with a slight upward offset */
-  animation: fadeInUp 1s forwards; /* Apply animation */
+  opacity: 0; 
+  transform: translateY(20px); 
+  animation: fadeInUp 1s forwards; 
 }
 
-/* Keyframes for fadeInUp animation */
 @keyframes fadeInUp {
   to {
-    opacity: 1; /* End fully visible */
-    transform: translateY(0); /* End at the original position */
+    opacity: 1;
+    transform: translateY(0); 
   }
 }
 
-/* Hover effect for extra interactivity */
+
 .dosha-description:hover {
-  color: #333; /* Darker color on hover */
-  transform: scale(1.02); /* Slightly enlarge text */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  color: #333; 
+  transform: scale(1.02);
+  transition: color 0.3s ease, transform 0.3s ease; 
 }
 
 .dosha-cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px; /* Space between cards */
+  gap: 30px;
 }
 
 .dosha-card {
@@ -241,7 +227,6 @@ header, .header-content, .model-viewer-container, .products-container {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 300px;
-  /* background-color: #fff; */
   margin: 20px;
   padding: 20px;
   text-align: center;
@@ -276,7 +261,7 @@ header, .header-content, .model-viewer-container, .products-container {
   line-height: 1.6;
 }
 .dosha-section {
-  background-color: #f0f9f5; /* Light green background */
+  background-color: #f0f9f5;
   padding: 60px 20px;
   text-align: center;
 }
@@ -301,10 +286,10 @@ header, .header-content, .model-viewer-container, .products-container {
 }
 
 .dosha-card {
-  perspective: 1000px; /* Create 3D space for the flip effect */
+  perspective: 1000px; 
   flex: 1;
   min-width: 280px;
-  height: 350px; /* Fixed height to maintain consistent card size */
+  height: 350px;
 }
 
 .dosha-card-inner {
@@ -316,15 +301,14 @@ header, .header-content, .model-viewer-container, .products-container {
 }
 
 .dosha-card:hover .dosha-card-inner {
-  transform: rotateY(180deg); /* Flip the card on hover */
+  transform: rotateY(180deg); 
 }
 
-/* Front of the card (image) */
 .dosha-card-front {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Hide the back side when the front is visible */
+  backface-visibility: hidden;
 }
 
 .dosha-image {
@@ -334,15 +318,15 @@ header, .header-content, .model-viewer-container, .products-container {
   border-radius: 15px;
 }
 
-/* Back of the card (text) */
+
 .dosha-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #fff;
   border-radius: 15px;
-  backface-visibility: hidden; /* Hide the front side when the back is visible */
-  transform: rotateY(180deg); /* Rotate the back side to be hidden initially */
+  backface-visibility: hidden; 
+  transform: rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;

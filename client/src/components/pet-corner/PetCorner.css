@@ -1,4 +1,4 @@
-/* Card Styling */
+
 .pet-card {
   background: linear-gradient(to bottom right, #f2f2f2, #e9ecef);
   border-radius: 15px;
@@ -22,7 +22,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Subheading Styling */
+
 .pet-card h3 {
   font-size: 1.6rem;
   margin-bottom: 15px;
@@ -59,7 +59,7 @@
   max-height: 700px;
 }
 
-/* Plant Remedies */
+
 .plants {
   margin-top: 20px;
 }
@@ -91,7 +91,7 @@
   margin: 2px 0;
 }
 
-/* Prevention Tips and Causes */
+
 .prevention-tips ul {
   padding-left: 20px;
   color: #495867;
@@ -127,7 +127,7 @@
 .pet-cards-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the cards */
+  justify-content: center; 
   width: 100%;
 }
 
@@ -239,13 +239,13 @@ li {
 .pet-cards-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Spacing between cards */
-  gap: 20px; /* Gap between cards */
+  justify-content: space-between; 
+  gap: 20px; 
   padding: 20px;
 }
 
 .pet-card {
-  flex: 1 1 calc(33.33% - 50px); /* Take up one-third of the row minus gaps */
+  flex: 1 1 calc(33.33% - 50px);
   background: url('https://img.freepik.com/free-photo/brown-watercolor-leaf-background-aesthetic-autumn-season_53876-129881.jpg') no-repeat center center / cover;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -269,13 +269,13 @@ li {
 
 @media (max-width: 900px) {
   .pet-card {
-    flex: 1 1 calc(50% - 40px); /* Two cards per row on smaller screens */
+    flex: 1 1 calc(50% - 40px); 
   }
 }
 
 @media (max-width: 600px) {
   .pet-card {
-    flex: 1 1 100%; /* One card per row on small screens */
+    flex: 1 1 100%; 
   }
 }
 
@@ -299,7 +299,7 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  background-color: rgba(0, 0, 0, 0.8); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -336,12 +336,12 @@ li {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
-  background: white; /* Background for the results */
+  background: white; 
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  z-index: 1001; /* Ensure it's above the quiz modal */
+  z-index: 1001; 
 }
 
 .result-popup {
@@ -350,11 +350,11 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+  background-color: rgba(0, 0, 0, 0.7); 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it appears above other content */
+  z-index: 1000; 
 }
 
 .result-content {
@@ -373,8 +373,6 @@ li {
   transform: translate(-50%, -20%);
   background-color: rgb(124, 243, 177);
   background: url('https://img.freepik.com/premium-photo/design-florals-botanicals-with-vibrant-grainy-gradient-glass-morphism-art-nouveau-influence_859483-1086050.jpg') no-repeat center center / cover;
-
-/* color : rgb(255, 255, 255);   */
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -421,25 +419,25 @@ li {
   font-size: 1.2rem;
   line-height: 1.6;
 }
-/* Add this inside the result popup or card where you want the marquee to scroll */
+
 .diagnosis-content {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Hide any text that goes outside the boundaries */
+  overflow: hidden; 
 }
 
 .diagnosis-content .marquee-text {
   white-space: nowrap;
   display: inline-block;
-  color: rgb(183, 243, 183); /* Bright green color */
-  font-weight: bold; /* Make text bold */
-  font-size: 1.2rem; /* Adjust font size to be more prominent */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for depth */
-  padding: 5px; /* Add some padding for spacing */
-  border-radius: 5px; /* Optional rounded corners */
-  background-color: rgba(27, 74, 32, 0.5); /* Semi-transparent dark green background */
+  color: rgb(183, 243, 183); 
+  font-weight: bold;
+  font-size: 1.2rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  padding: 5px;
+  border-radius: 5px; 
+  background-color: rgba(27, 74, 32, 0.5);
   animation: marquee 9s linear infinite;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add box shadow for a "floating" effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 @keyframes marquee {

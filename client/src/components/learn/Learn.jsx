@@ -66,10 +66,9 @@ function Learn() {
       setIsScanning(true);
       setShowModal(false);
 
-      // Simulate scanning process
+     
       setTimeout(() => {
-        // Here you would call your image recognition API
-        setScanningMessage('Uploaded herb is Aloe Vera'); // Example result
+        setScanningMessage('Uploaded herb is Aloe Vera');
         setIsScanning(false);
       }, 3000);
     }
@@ -84,10 +83,9 @@ function Learn() {
       setScanningMessage('Scanning your upload...');
       setIsScanning(true);
 
-      // Simulate scanning process
       setTimeout(() => {
-        // Here you would call your image recognition API
-        setScanningMessage('Uploaded herb is Aloe Vera'); // Example result
+        
+        setScanningMessage('Uploaded herb is Aloe Vera'); 
         setIsScanning(false);
       }, 3000);
     }

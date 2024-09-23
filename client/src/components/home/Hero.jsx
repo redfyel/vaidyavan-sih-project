@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css'; // Make sure to include styles for the Hero section
+import './Home.css'; 
 
 const Home = () => {
   return (

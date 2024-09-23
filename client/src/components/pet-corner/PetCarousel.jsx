@@ -9,7 +9,6 @@ const PetCarousel = () => {
     { icon: 'https://previews.123rf.com/images/viperagp/viperagp1308/viperagp130800020/21589237-fresh-herbs-falling-into-a-porcelain-mortar.jpg', label: 'Cat' },
     { icon: 'https://previews.123rf.com/images/viperagp/viperagp1308/viperagp130800020/21589237-fresh-herbs-falling-into-a-porcelain-mortar.jpg', label: 'Neem' },
     { icon: 'https://previews.123rf.com/images/viperagp/viperagp1308/viperagp130800020/21589237-fresh-herbs-falling-into-a-porcelain-mortar.jpg', label: 'Rosemary' },
-    // Add more pet and plant icons
   ];
 
   const settings = {

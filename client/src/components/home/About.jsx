@@ -67,9 +67,7 @@ const About = () => {
                   <div className="caption">{features[index]?.text}</div>
                   <div className="icon">{features[index]?.icon}</div>
                 </div>
-                {/* <div className="cta-button">
-                  <button onClick={() => alert('Learn More')}>Learn More</button>
-                </div> */}
+
               </div>
             ))}
           </div>

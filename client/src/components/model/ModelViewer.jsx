@@ -11,16 +11,15 @@ function ModelViewer({ modelUrl }) {
     const width = mountRef.current.clientWidth;
     const height = mountRef.current.clientHeight;
 
-    // Create scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);
-    renderer.setClearColor(0xffffff); // White background
+    renderer.setClearColor(0xffffff); 
     mountRef.current.appendChild(renderer.domElement);
 
-    // Add lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 1); // Soft white light
+ 
+    const ambientLight = new THREE.AmbientLight(0x404040, 1); 
     scene.add(ambientLight);
 
     const pointLight = new THREE.PointLight(0xffffff, 2, 100);
@@ -31,10 +30,10 @@ function ModelViewer({ modelUrl }) {
     directionalLight.position.set(5, 10, 5).normalize();
     scene.add(directionalLight);
 
-    const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0.5); // Sky color, ground color, intensity
+    const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0.5);
     scene.add(hemisphereLight);
 
-    // Load the GLB model
+
     const loader = new GLTFLoader();
     loader.load(modelUrl, (gltf) => {
       scene.add(gltf.scene);
@@ -62,7 +61,7 @@ function ModelViewer({ modelUrl }) {
       if (mountRef.current && renderer.domElement) {
         mountRef.current.removeChild(renderer.domElement);
       }
-      controlsRef.current?.dispose(); // Clean up the controls to avoid memory leaks
+      controlsRef.current?.dispose();
     };
   }, [modelUrl]);
 

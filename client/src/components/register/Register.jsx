@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { FaLeaf, FaUser, FaEnvelope, FaLock, FaImage } from 'react-icons/fa'; // Adjust icons as needed
+import { FaLeaf, FaUser, FaEnvelope, FaLock, FaImage } from 'react-icons/fa'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Register.css'; // Create and use this CSS file for custom styles
+import './Register.css';
 
 const Register = () => {
   const [formState, setFormState] = useState({
@@ -11,7 +11,7 @@ const Register = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    imageUrl: '', // New field for image URL
+    imageUrl: '', 
   });
 
   const [progress, setProgress] = useState(0);
@@ -26,7 +26,7 @@ const Register = () => {
     const filledFields = Object.values({ ...formState, [name]: value }).filter(
       (field) => field !== ''
     ).length;
-    const newProgress = (filledFields / 5) * 100; // Updated progress calculation
+    const newProgress = (filledFields / 5) * 100; 
     setProgress(newProgress);
     updateMessage(newProgress);
   };

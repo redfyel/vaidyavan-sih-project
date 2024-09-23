@@ -15,24 +15,24 @@
     animation: slide 20s linear infinite;
   }
 
-  /* h2 Heading Styles */
+
 h2 {
   font-size: 2.5em;
   margin-top: 20px;
-  color: #004d40; /* Deep teal color */
-  font-family: 'Poppins', sans-serif; /* Clean, modern font */
-  font-weight: 700; /* Bold weight */
-  text-align: center; /* Centers the heading */
-  letter-spacing: 1px; /* Adds slight spacing between letters for clarity */
-  text-transform: uppercase; /* Transforms text to uppercase for emphasis */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transformation */
+  color: #004d40;
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 700; 
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+  transition: color 0.3s ease, transform 0.3s ease; 
 }
 
-/* Hover Effect */
+
 h2:hover {
-  color: #00796b; /* Changes to a lighter shade of teal on hover */
-  transform: translateY(-3px); /* Slightly lifts the heading on hover */
+  color: #00796b;
+  transform: translateY(-3px);
 }
 
   
@@ -53,13 +53,13 @@ h2:hover {
   }
   .overlay p {
     margin: 0;
-    font-size: 1.1rem; /* Adjust font size as needed */
+    font-size: 1.1rem; 
     font-weight: 600;
-    color:#1b6617; /* Slightly lighter green with less opacity for better visibility */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+    color:#1b6617; 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
     text-align: center;
-    line-height: 1.5; /* Improve readability */
-    padding: 15px; /* Padding around text */
-    border-radius: 10px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background to reduce blurriness */
+    line-height: 1.5; 
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6); 
 }

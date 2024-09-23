@@ -45,7 +45,7 @@ function PlantDetail({ plant, onClose }) {
     const translations = {
       en: `Scientific Name: ${plant.scientificName}, Important Part: ${plant.importantPart}, Side Effects: ${plant.sideEffects}, How to Use: ${plant.howToUse.join(', ')}, Diseases: ${plant.diseases.join(', ')}`,
       hi: `वैज्ञानिक नाम: ${plant.scientificName}, महत्वपूर्ण भाग: ${plant.importantPart}, दुष्प्रभाव: ${plant.sideEffects}, उपयोग कैसे करें: ${plant.howToUse.join(', ')}, रोग: ${plant.diseases.join(', ')}`,
-      // Add more languages here
+      
     };
     return translations[language] || translations.en;
   };
@@ -55,8 +55,6 @@ function PlantDetail({ plant, onClose }) {
       en: 'en-US',
       hi: 'hi-IN',
       tel : 'tel-IN',
-
-      // Add more language codes here
     };
     return languageCodes[language] || 'en-US';
   };
@@ -79,8 +77,7 @@ function PlantDetail({ plant, onClose }) {
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
     setDropdownVisible(false);
-    // Add logic to handle language change if needed
-    handleTranslate(); // Optional: Speak the translated text immediately
+    handleTranslate(); 
   };
 
   return (
@@ -131,7 +128,6 @@ function PlantDetail({ plant, onClose }) {
             <button onClick={() => handleLanguageChange('hi')}>Malyalam</button>
             <button onClick={() => handleLanguageChange('hi')}>Bengali</button>
             <button onClick={() => handleLanguageChange('hi')}>Kannada</button>
-            {/* Add more languages as needed */}
           </div>
         </div>
         

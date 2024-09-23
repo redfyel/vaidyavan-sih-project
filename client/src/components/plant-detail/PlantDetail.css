@@ -1,7 +1,7 @@
 .plant-detail {
   position: relative;
   padding: 20px;
-  background: linear-gradient(135deg, #d3e6dd, #a1d7b6); /* Gradient background */
+  background: linear-gradient(135deg, #d3e6dd, #a1d7b6);
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
@@ -97,7 +97,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   margin-top: 20px;
-  position: relative; /* Added to position the dropdown correctly */
+  position: relative; 
 }
 
 .plant-detail-translate:hover {

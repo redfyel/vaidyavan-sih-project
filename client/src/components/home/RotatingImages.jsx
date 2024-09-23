@@ -1,7 +1,7 @@
 import React from 'react';
 import './RotatingImages.css';
 
-// Import local images
+
 import image1 from '../../assets/images/virtual garden.jpg';
 import image2 from '../../assets/images/chatbot.jpg';
 import image3 from '../../assets/images/search.jpg';
@@ -10,7 +10,7 @@ import image5 from '../../assets/images/study.jpg';
 import image6 from '../../assets/images/visual guide.jpg';
 import image7 from '../../assets/images/pet.jpg';
 
-// Define the descriptions
+
 const descriptions = [
   'Explore our virtual garden and discover various herbs.',
   'Get help from our chatbot for all your herbal queries.',
@@ -21,7 +21,6 @@ const descriptions = [
   'Get advice on pet care related to herbal treatments.',
 ];
 
-// Map images to the descriptions
 const images = [
   image1,
   image2,

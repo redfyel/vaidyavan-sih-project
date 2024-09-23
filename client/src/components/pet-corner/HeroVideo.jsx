@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './HeroVideo.css';
-import myVideo from '../../assets/videoo.mp4'; // Ensure this path is correct
+import myVideo from '../../assets/videoo.mp4'; 
 
 const HeroVideo = () => {
   const [videoHeight, setVideoHeight] = useState('100vh');

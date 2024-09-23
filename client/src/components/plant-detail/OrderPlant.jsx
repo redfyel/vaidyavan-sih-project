@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FaSeedling } from 'react-icons/fa'; // Import a plant icon from react-icons
+import { FaSeedling } from 'react-icons/fa';
 import './OrderPlant.css'
 
 function OrderPlant() {
-  const { name } = useParams(); // Get the plant name from URL params
+  const { name } = useParams();
   const navigate = useNavigate();
   const [plant, setPlant] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ function OrderPlant() {
   const [quantity, setQuantity] = useState(1);
   const [orderPlaced, setOrderPlaced] = useState(false);
 
-  // Fetch plant details from backend when component mounts
+
   useEffect(() => {
     const fetchPlantDetails = async () => {
       try {
@@ -38,9 +38,8 @@ function OrderPlant() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Simulate order placement
     setOrderPlaced(true);
-    // Here, you would usually send the order details to the server
+
   };
 
   const handleClose = () => {

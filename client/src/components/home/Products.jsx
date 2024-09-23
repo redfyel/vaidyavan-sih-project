@@ -19,13 +19,12 @@ const About = () => {
     { icon: <FaComments />, text: 'Engage in discussions with experts and peers' },
   ];
 
-  // Auto-slide logic
   useEffect(() => {
     let interval;
     if (autoSlide) {
       interval = setInterval(() => {
         goToNext();
-      }, 3000); // Change video every 3 seconds
+      }, 3000); 
     }
     return () => clearInterval(interval);
   }, [currentIndex, autoSlide]);

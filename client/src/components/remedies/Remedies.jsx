@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Remedies.css'; // Use updated CSS
+import './Remedies.css'; 
 import { BsSearch } from "react-icons/bs";
 
 
@@ -15,8 +15,6 @@ const videos = [
   { id: 'VvG4jr0HskE', title: 'No Human 2', tags: ['tips'], language: 'English' },
   { id: 'kROctUzxaZs', title: 'No Human 3', tags: ['tips'], language: 'English' },
   { id: '2JOV5psevYk', title: 'No Human 4', tags: ['tips'], language: 'English' },
-
-  // Additional videos
   { id: '544Pt3n1S1E', title: 'Homemade Remedy A', tags: ['homemade'], language: 'Hindi' },
   { id: 'SPyqvcDISPA', title: 'Homemade Remedy B', tags: ['homemade'], language: 'Hindi' },
   { id: 'CTHRBbjAiFc', title: 'Homemade Remedy C', tags: ['homemade'], language: 'Hindi' },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FaComments } from 'react-icons/fa'; // Icon for minimized state
-import { FaMinus, FaTimes } from 'react-icons/fa'; // Minimize and Close icons
+import { FaComments } from 'react-icons/fa';
+import { FaMinus, FaTimes } from 'react-icons/fa'; 
 import './Chatbot.css';
 
 const Chatbot = () => {
@@ -8,7 +8,7 @@ const Chatbot = () => {
     { text: "Hi! How can I assist you today?", sender: "bot" },
   ]);
   const [input, setInput] = useState("");
-  const [isOpen, setIsOpen] = useState(true); // Track if chatbot is open or minimized
+  const [isOpen, setIsOpen] = useState(true); 
 
   const handleSend = () => {
     if (input.trim() === "") return;
@@ -55,7 +55,7 @@ const Chatbot = () => {
         <div className="chatbot-container">
           <div className="chatbot-header">
             Oshidhi
-            <FaMinus className="minimize-icon" onClick={toggleChatbot} /> {/* Minimize icon */}
+            <FaMinus className="minimize-icon" onClick={toggleChatbot} />
           </div>
           <div className="chatbot-messages">
             {messages.map((msg, index) => (
@@ -79,7 +79,7 @@ const Chatbot = () => {
         </div>
       ) : (
         <div className="chatbot-icon" onClick={toggleChatbot}>
-          <FaComments size={30} /> {/* Show icon when minimized */}
+          <FaComments size={30} />
         </div>
       )}
     </div>
