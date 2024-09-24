@@ -536,12 +536,12 @@ h3 {
 .dosha-badge {
   width: 120px;
   height: 120px;
-  background-color: #f5f5f5; /* Light background */
+  background-color: #f5f5f5; 
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px; /* Increased font size for better visibility */
+  font-size: 24px;
   font-weight: bold;
   color: #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -549,48 +549,46 @@ h3 {
 }
 
 
-/* Option Buttons */
+
 .option-button {
-  background-color: #ffffff; /* White background for options */
-  color: #333;               /* Dark text */
-  border: 2px solid #2E8B57; /* Green border */
-  padding: 12px 24px;       /* More padding for a larger clickable area */
-  font-size: 18px;          /* Slightly larger text */
-  margin: 10px;             /* Spacing between options */
-  border-radius: 8px;       /* Rounded corners */
-  cursor: pointer;          /* Pointer cursor on hover */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  width: 80%;               /* Consistent width */
+  background-color: #ffffff; 
+  color: #333;               
+  border: 2px solid #2E8B57; 
+  padding: 12px 24px;      
+  font-size: 18px;          
+  margin: 10px;            
+  border-radius: 8px;      
+  cursor: pointer;         
+  transition: all 0.3s ease;  
 }
 
-/* Hover Effects for Options */
 .option-button:hover {
-  background-color: #2E8B57; /* Change to green on hover */
-  color: white;               /* Change text color to white */
-  transform: scale(1.05);     /* Slightly enlarge on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  background-color: #2E8B57; 
+  color: white;               
+  transform: scale(1.05);     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Active State */
+
 .option-button:active {
-  background-color: #45a049;  /* Darker green when active */
+  background-color: #45a049;  
 }
 
-/* Transition for Question Container */
+
 .question-container:hover {
-  transform: translateY(-5px); /* Slightly raise the question container on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow for emphasis */
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
-/* Responsive Adjustments */
+
 @media screen and (max-width: 600px) {
   .option-button {
-    width: 100%; /* Full width on small screens */
-    font-size: 16px; /* Slightly smaller text */
+    width: 100%; 
+    font-size: 16px; 
   }
   
   .question-container {
-    padding: 15px; /* Reduce padding on smaller screens */
+    padding: 15px; 
   }
 }
 

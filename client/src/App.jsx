@@ -14,7 +14,7 @@ import HealingCommunities from "./components/community-forum/HealingCommunities"
 import CommunityForum from "./components/community-forum/CommunityForum";
 import HealingJourneys from "./components/community-forum/HealingJourneys";
 import "./App.css";
-import OrderHerbs from "./components/orderHerbs/OrderHerbs";
+import DoshaQuiz from "./components/doshaQuiz/DoshaQuiz";
 import YouTubeVideoGallery from "./components/remedies/Remedies";
 import PetCorner from "./components/pet-corner/PetCorner";
 function App() {
@@ -53,7 +53,7 @@ function App() {
         },
           {
             path:"quiz",
-            element :<OrderHerbs />,
+            element :<DoshaQuiz />,
           },
           {
             path:"remedies-tv",

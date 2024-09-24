@@ -8,7 +8,7 @@ import RotatingImages from './RotatingImages';
 import Contact from './Contact';
 import Footer from './Footer';
 import Chatbot from '../home/Chatbot';
-import OrderHerbs from '../orderHerbs/OrderHerbs';
+import OrderHerbs from '../doshaQuiz/DoshaQuiz';
 import './Home.css';
 import ModelViewer from './ModelViewer'; 
 

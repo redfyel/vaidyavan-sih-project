@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import './OrderHerbs.css';
+import './DoshaQuiz.css';
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
-// Import your audio
+
 import video1 from '../../assets/videos/v6.mp4';
 
 import audioFile from '../../assets/audio/a1.mp3';
@@ -178,7 +178,7 @@ const OrderHerbs = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsBurstVisible(true);
-    }, 500); // Delay for burst animation to trigger
+    }, 500);
   }, []);
 
   const handleQuizSubmission = (finalAnswers) => {
@@ -213,73 +213,72 @@ const OrderHerbs = () => {
   const fadeIn = useSpring({ opacity: result ? 1 : 0 });
   const slideUp = useSpring({ transform: result ? 'translateY(0)' : 'translateY(50px)' });
 
-  const COLORS = ['#ADD8E6', '#FFA500', '#2E8B57']; // Colors for Vata, Pitta, Kapha
-  const [audioMuted, setAudioMuted] = useState(true); // Start with muted audio
+  const COLORS = ['#ADD8E6', '#FFA500', '#2E8B57']; 
+  const [audioMuted, setAudioMuted] = useState(true); 
 
   useEffect(() => {
     const audio = document.getElementById('background-audio');
     
-    // Automatically try to play the muted audio
+    
     const playAudio = () => {
       audio.play().catch(error => {
         console.error("Autoplay was prevented, user interaction is required:", error);
       });
     };
 
-    playAudio(); // Attempt to autoplay muted audio
+    playAudio(); 
   }, []);
 
-  // Function to unmute the audio on user interaction
+ 
   const unmuteAudio = () => {
     const audio = document.getElementById('background-audio');
-    audio.muted = false;  // Unmute the audio
-    setAudioMuted(false);  // Update state to reflect the unmuted status
-    audio.play();  // Ensure the audio plays after unmuting
+    audio.muted = false;  
+    setAudioMuted(false); 
+    audio.play();  
   };
   return (
     <div className="ayurvedic-quiz">
-      {/* Video Background */}
+     
       <video autoPlay muted loop className="background-video">
         <source src={video1} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-       {/* Audio element: starts muted */}
+      
        <audio id="background-audio" loop autoPlay muted>
         <source src={audioFile} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 
-      {/* Add a button or other user interaction to unmute the audio */}
+     
       {audioMuted && (
         <button onClick={unmuteAudio} className="unmute-button">
          
         </button>
       )}
-      {/* Transparent button for unmuting the audio */}
-      {audioMuted && (
+       {audioMuted && (
         <button 
           onClick={unmuteAudio} 
           style={{
-            position: 'absolute',  // Positioned relative to the container
-            top: '0',              // You can adjust the positioning
-            left: '0',             // Make sure it doesn't overlap crucial content
-            width: '100%',         // Covers the whole screen or defined area
-            height: '100%',        // Covers the whole screen or defined area
-            opacity: '0',          // Fully transparent
-            zIndex: '999',         // Make sure it's above other content
-            cursor: 'pointer',     // Still shows as a clickable area
+            position: 'absolute',  
+            top: '0',              
+            left: '0',             
+            width: '100%',        
+            height: '100%',        
+            opacity: '0',         
+            zIndex: '999',         
+            cursor: 'pointer',    
             border: 'none',
             background: 'none'
           }}
-            // Accessible label for screen readers
+            
         >
           Unmute Audio
         </button>
       )}
 
 
-      {/* Quiz Content */}
+    
       {!quizStarted && !result && (
         <button onClick={() => setQuizStarted(true)} className="start-quiz-button">
           Start Quiz
