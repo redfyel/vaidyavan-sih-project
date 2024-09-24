@@ -117,7 +117,7 @@ h3 {
   margin: 20px 0;
 }
 
-/* Dos and Don'ts Cards */
+
 .dos-donts {
   display: flex;
   justify-content: space-around;
@@ -163,7 +163,7 @@ h3 {
   margin: 5px 0;
 }
 
-/* Fade In Animation */
+
 .fade-enter {
   opacity: 0;
   transform: translateY(20px);
@@ -186,7 +186,6 @@ h3 {
   transition: opacity 300ms, transform 300ms;
 }
 
-/* Responsive Styles */
 @media screen and (max-width: 600px) {
   .option-button {
     width: 100%;
@@ -197,59 +196,58 @@ h3 {
   }
 }
 .order-herbs-container {
-  position: relative; /* Make container relative for absolute positioning of button */
+  position: relative; 
 }
 
 .unmute-button {
-  position: fixed;         /* Fixed position to stay in the bottom corner */
-  bottom: 20px;           /* Adjust vertical position */
-  right: 20px;            /* Adjust horizontal position */
-  width: 40px;            /* Width of the button */
-  height: 40px;           /* Height of the button */
-  background-color: #2E8B57; /* Green color */
-  border: none;           /* No border */
-  border-radius: 50%;     /* Make it round */
-  cursor: pointer;        /* Pointer cursor on hover */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
-  outline: none;          /* Remove outline on focus */
+  position: fixed;         
+  bottom: 20px;           
+  right: 20px;           
+  width: 40px;            
+  height: 40px;           
+  background-color: #2E8B57; 
+  border: none;           
+  border-radius: 50%;    
+  cursor: pointer;        
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+  outline: none;          
 }
-/* Quiz Questions and Options Styles */
-/* Quiz Questions and Options Styles */
+
 .question-container {
-  background: rgba(255, 255, 255, 0.5); /* Transparent background */
+  background: rgba(255, 255, 255, 0.5); 
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Result Badge Styles */
+
 .dosha-badge {
-  background-color: #2E8B57; /* Green background */
-  color: white;              /* White text */
-  padding: 10px 20px;       /* Padding for the badge */
-  border-radius: 20px;      /* Rounded badge shape */
-  display: inline-block;     /* Make it inline */
-  margin: 10px 0;           /* Margin for spacing */
-  font-size: 24px;          /* Larger font size */
-  text-align: center;        /* Centered text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  background-color: #2E8B57; 
+  color: white;              
+  padding: 10px 20px;      
+  border-radius: 20px;      
+  display: inline-block;     
+  margin: 10px 0;           
+  font-size: 24px;          
+  text-align: center;        
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
-/* Sanskrit Heading for Dosha Profile */
+
 .result-heading {
-  font-family: 'Gargi', serif; /* Use a Sanskrit-style font */
+  font-family: 'Gargi', serif; 
   font-size: 28px;
   color: #3b5998;
   text-align: center;
   margin-bottom: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  background: rgba(255, 255, 255, 0.1); 
   padding: 10px;
   border-radius: 8px;
 }
 
-/* Dosha Badge Styling */
+
 .dosha-badge {
   display: inline-block;
   margin: 0 auto;
@@ -266,9 +264,9 @@ h3 {
   margin-bottom: 30px;
 }
 
-/* Adjust for transparency in questions */
+
 .option-button {
-  background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+  background-color: rgba(255, 255, 255, 0.2); 
   color: #333;
   border: 2px solid #45a049;
   transition: all 0.3s ease;
@@ -278,131 +276,129 @@ h3 {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Keep other styles consistent */
-/* Dosha Badge Styling */
+
 .dosha-badge-container {
   display: flex;
-  justify-content: center; /* Center the badge */
+  justify-content: center; 
   margin: 20px 0;
 }
 .dosha-profile-heading {
-  font-size: 36px;                      /* Larger font size */
-  font-weight: bold;                    /* Bold text */
-  color: #2E8B57;                       /* Dark green color */
-  text-align: center;                   /* Center align */
-  font-family: 'Georgia', serif;        /* Elegant serif font */
-  position: relative;                   /* Position for pseudo-elements */
-  margin-bottom: 30px;                  /* Space below */
-  padding: 10px 20px;                   /* Padding around the text */
-  background: linear-gradient(90deg, #A7D3A9, #4CAF50); /* Gradient background */
-  border-radius: 12px;                  /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  overflow: hidden;                     /* Clip any overflow */
+  font-size: 36px;                    
+  font-weight: bold;                  
+  color: #2E8B57;                     
+  text-align: center;                  
+  font-family: 'Georgia', serif;       
+  position: relative;                   
+  margin-bottom: 30px;                
+  padding: 10px 20px;                   
+  background: linear-gradient(90deg, #A7D3A9, #4CAF50); 
+  border-radius: 12px;                  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  overflow: hidden;                     
 }
 
 .dosha-profile-heading:before {
-  content: '';                          /* Create an empty pseudo-element */
-  position: absolute;                   /* Position it absolutely */
-  left: 0;                              /* Align to the left */
-  bottom: 0;                            /* Align to the bottom */
-  width: 100%;                          /* Full width */
-  height: 10px;                         /* Height of the line */
-  background: #FFD700;                  /* Gold color */
-  border-radius: 12px;                  /* Match the heading's border radius */
-  transform: scaleX(0);                 /* Start hidden */
-  transition: transform 0.3s ease;      /* Smooth transition */
+  content: '';                       
+  position: absolute;                   
+  left: 0;                              
+  bottom: 0;                          
+  width: 100%;                          
+  height: 10px;                         
+  background: #FFD700;                  
+  transform: scaleX(0);                 
+  transition: transform 0.3s ease;      
 }
 
 .dosha-profile-heading:hover:before {
-  transform: scaleX(1);                 /* Expand on hover */
+  transform: scaleX(1);                 
 }
 .result-badge-container {
   display: flex;
-  justify-content: center; /* Center the badge horizontally */
-  align-items: center;     /* Center the badge vertically */
+  justify-content: center; 
+  align-items: center;     
   margin-top: 20px;
 }
 
 .dosha-badge {
   display: inline-block;
-  background-color: #FFD700;        /* Gold background for badge */
-  color: white;                     /* Text color */
-  font-size: 24px;                  /* Font size */
-  font-weight: bold;                /* Bold text */
-  padding: 20px;                    /* Padding inside the badge */
-  border-radius: 50%;               /* Make the badge circular */
-  text-align: center;               /* Center the text */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-  opacity: 0;                       /* Initially hidden */
-  transform: scale(0.5);            /* Start at smaller size */
-  animation: burstUp 1.2s ease-out forwards; /* Trigger the animation */
+  background-color: #FFD700;        
+  color: white;                     
+  font-size: 24px;                  
+  font-weight: bold;                
+  padding: 20px;                   
+  border-radius: 50%;               
+  text-align: center;              
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+  opacity: 0;                       
+  transform: scale(0.5);           
+  animation: burstUp 1.2s ease-out forwards; 
 }
 
-/* Keyframes for bursting and coming up animation */
+
 @keyframes burstUp {
   0% {
-    transform: scale(0.5);          /* Start small */
-    opacity: 0;                     /* Hidden */
+    transform: scale(0.5);          
+    opacity: 0;                     
   }
   50% {
-    transform: scale(1.3);          /* Slightly larger at midpoint */
-    opacity: 1;                     /* Become visible */
+    transform: scale(1.3);          
+    opacity: 1;                     
   }
   70% {
-    transform: scale(0.9);          /* Shrink back slightly */
+    transform: scale(0.9);         
   }
   100% {
-    transform: scale(1);            /* Settle at normal size */
+    transform: scale(1);            
   }
 }
 .result-badge-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+  justify-content: center; 
+  align-items: center;     
   margin-top: 20px;
 }
 
 .dosha-badge {
   display: inline-block;
-  background-color: #FFD700;        /* Gold background for badge */
-  color: white;                     /* Text color */
-  font-size: 24px;                  /* Font size */
-  font-weight: bold;                /* Bold text */
-  padding: 20px;                    /* Padding inside the badge */
-  border-radius: 50%;               /* Circular shape */
-  text-align: center;               /* Center the text */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add depth with shadow */
-  opacity: 0;                       /* Initially hidden */
-  transform: translateY(200px) rotate(0deg); /* Start off-screen and not rotated */
-  animation: rollIn 1.5s ease-out forwards;  /* Apply the rolling animation */
+  background-color: #FFD700;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(200px) rotate(0deg);
+  animation: rollIn 1.5s ease-out forwards;
 }
 
-/* Keyframes for rolling and stopping at center */
 @keyframes rollIn {
   0% {
-    opacity: 0;                     /* Hidden */
-    transform: translateY(200px) rotate(0deg); /* Start off-screen with no rotation */
+    opacity: 0;
+    transform: translateY(200px) rotate(0deg);
   }
   50% {
-    opacity: 1;                     /* Fade in */
-    transform: translateY(50px) rotate(360deg); /* Halfway: moves up and spins fully */
+    opacity: 1;
+    transform: translateY(50px) rotate(360deg);
   }
   100% {
-    opacity: 1;                     /* Stay visible */
-    transform: translateY(0px) rotate(0deg);   /* End position: no rotation, at center */
+    opacity: 1;
+    transform: translateY(0px) rotate(0deg);
   }
 }
+
 .dosha-heading {
-  font-family: 'Playfair Display', serif; /* Elegant font family */
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: bold;
-  color: #17664c; /* Deep green to match your theme */
+  color: #17664c;
   position: relative;
-  text-transform: uppercase; /* Capitalize for more impact */
-  letter-spacing: 5px; /* Initial spacing for animation */
+  text-transform: uppercase;
+  letter-spacing: 5px;
   opacity: 0;
-  transform: scale(0.8); /* Initial small scale */
-  transition: all 0.6s ease-in-out; /* Smooth entrance */
+  transform: scale(0.8);
+  transition: all 0.6s ease-in-out;
 }
 
 .dosha-heading::after {
@@ -412,19 +408,20 @@ h3 {
   left: 0;
   width: 0;
   height: 5px;
-  background-color: #45a049; /* Accent green color */
+  background-color: #45a049;
   transition: width 0.5s ease-in-out;
 }
 
 .dosha-heading.visible {
   opacity: 1;
-  transform: scale(1); /* Growing effect */
-  letter-spacing: 2px; /* Tighten letter spacing */
+  transform: scale(1);
+  letter-spacing: 2px;
 }
 
 .dosha-heading.visible::after {
-  width: 100%; /* Expanding underline */
+  width: 100%;
 }
+
 .dosha-result-container {
   display: flex;
   flex-direction: column;
@@ -436,7 +433,7 @@ h3 {
 .dosha-badge {
   width: 150px;
   height: 150px;
-  background-color: #45a049; /* Green color for the badge */
+  background-color: #45a049;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -446,20 +443,20 @@ h3 {
   justify-content: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  transform: rotate(-360deg); /* Initial rotate state */
-  transition: transform 1s ease-out; /* Smooth rotating reveal */
-  opacity: 0; /* Start hidden */
+  transform: rotate(-360deg);
+  transition: transform 1s ease-out;
+  opacity: 0;
 }
 
 .dosha-badge.visible {
-  transform: rotate(0deg); /* Rotating effect */
-  opacity: 1; /* Fade in */
+  transform: rotate(0deg);
+  opacity: 1;
 }
 
 .flip-card {
   width: 200px;
   height: 250px;
-  perspective: 1000px; /* Perspective for 3D effect */
+  perspective: 1000px;
   margin-top: 20px;
 }
 
@@ -473,14 +470,14 @@ h3 {
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg); /* Flip on hover */
+  transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Hide the back side */
+  backface-visibility: hidden;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -494,18 +491,19 @@ h3 {
 }
 
 .flip-card-back {
-  background-color: #45a049; /* Green back */
+  background-color: #45a049;
   color: white;
   transform: rotateY(180deg);
 }
+
 .dosha-heading {
   font-size: 32px;
   font-weight: bold;
-  color: #17664c; /* Dark green color */
+  color: #17664c;
   text-align: center;
   margin: 30px 0;
-  opacity: 0; /* Start hidden */
-  transform: scale(0); /* Start with a burst effect */
+  opacity: 0;
+  transform: scale(0);
   animation: burst 0.6s ease-out forwards, fadeIn 0.4s ease-out 0.6s forwards;
 }
 
@@ -536,7 +534,7 @@ h3 {
 .dosha-badge {
   width: 120px;
   height: 120px;
-  background-color: #f5f5f5; 
+  background-color: #f5f5f5;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -548,47 +546,41 @@ h3 {
   text-align: center;
 }
 
-
-
 .option-button {
-  background-color: #ffffff; 
-  color: #333;               
-  border: 2px solid #2E8B57; 
-  padding: 12px 24px;      
-  font-size: 18px;          
-  margin: 10px;            
-  border-radius: 8px;      
-  cursor: pointer;         
-  transition: all 0.3s ease;  
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #2E8B57;
+  padding: 12px 24px;
+  font-size: 18px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .option-button:hover {
-  background-color: #2E8B57; 
-  color: white;               
-  transform: scale(1.05);     
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  background-color: #2E8B57;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 .option-button:active {
-  background-color: #45a049;  
+  background-color: #45a049;
 }
-
 
 .question-container:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-
 
 @media screen and (max-width: 600px) {
   .option-button {
-    width: 100%; 
-    font-size: 16px; 
+    width: 100%;
+    font-size: 16px;
   }
   
   .question-container {
-    padding: 15px; 
+    padding: 15px;
   }
 }
-
