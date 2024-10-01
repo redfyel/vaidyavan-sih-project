@@ -33,11 +33,12 @@ const Register = () => {
 
   const updateMessage = (progress) => {
     if (progress === 0) setMessage("Let's Get Growing!");
-    else if (progress <= 25) setMessage('Sprouting Up!');
-    else if (progress <= 50) setMessage('Growing Strong!');
-    else if (progress <= 75) setMessage('Blooming Beautifully!');
+    else if (progress <= 20) setMessage('Sprouting Up!');
+    else if (progress <= 40) setMessage('Growing Strong!');
+    else if (progress <= 60) setMessage('Blooming Beautifully!');
+    else if (progress <= 80) setMessage('Almost in Full Bloom!');
     else setMessage('Ready to Flourish!');
-  };
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,7 +61,7 @@ const Register = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center vh-100" style={{ backgroundColor: '#cfe2d9' }}>
+    <div className="d-flex align-items-center justify-content-center vh-80 p-5" style={{ backgroundColor: '#cfe2d9' }}>
       <div className="position-relative" style={{ width: '100%', maxWidth: '400px' }}>
         {/* Image Preview */}
         {formState.imageUrl && (
