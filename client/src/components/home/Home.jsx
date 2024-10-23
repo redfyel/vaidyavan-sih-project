@@ -61,7 +61,7 @@ const Home = () => {
         </div>
       </div>
 
-      <About />
+      {/* <About /> */}
 
       <RotatingImages />
       <section className="dosha-section">

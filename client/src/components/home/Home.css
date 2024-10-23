@@ -16,7 +16,7 @@
 .header-title {
   font-size: 3.5rem;
   font-weight: 900;
-  color: #1b6617;
+  color: #047501;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -24,20 +24,20 @@
 }
 
 .header-title .highlight {
-  color: #096b35;
+  color: #0e5f27;
   font-weight: 900;
   text-shadow: 2px 2px 4px #96c8b4;
 }
 
 .header-subtitle {
   font-size: 1.75rem;
-  color: #555;
+  color: #116c2a;
   margin-bottom: 40px;
   line-height: 1.6;
 }
 
 .header-subtitle .highlight {
-  color: #1a8d4f;
+  color: #2c4e31;
   font-weight: 700;
 }
 
@@ -103,7 +103,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 60px 40px;
-
+  height : 90vh;
+   background-size: cover;
+  background-image: url('https://wallpapersbyt.ca/cdn/shop/products/pickthisone2.jpg?v=1648671769');
   border-bottom: none;
   margin-bottom: 0; 
 }

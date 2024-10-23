@@ -2,14 +2,17 @@
 
 import React from 'react';
 import './Contact.css';
+import './Footer';
+import Footer from './Footer';
 
 function Contact() {
   return (
-    <div className="contact-section">
-      <h2>Contact Us</h2>
-    
-      
+   
+
+    <div className="contact-section d-flex justify-content-center">
+  
       <div className="contact-details">
+        
         <div className="contact-info">
           <h3>Email Us</h3>
           <p><a href="mailto:info@vaidyaVan.com">info@vaidyaVan.com</a></p>
@@ -38,7 +41,10 @@ function Contact() {
         <textarea placeholder="Your Message" className="contact-textarea"></textarea>
         <button type="submit" className="contact-button">Send Message</button>
       </form>
+
     </div>
+    
+
   );
 }
 
