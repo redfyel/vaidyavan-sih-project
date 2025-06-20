@@ -13,7 +13,7 @@ function UserLoginStore({children}) {
     //make login request
     async function loginUser(userCred){
       try{
-        let res = await fetch('http://localhost:4000/user-api/login',{
+        let res = await fetch('https://vaidyavan-app.onrender.com/user-api/login',{
           method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(userCred),

@@ -20,7 +20,7 @@ const RemedySharing = () => {
   useEffect(() => {
     const fetchRemedies = async () => {
       try {
-        const response = await fetch('http://localhost:4000/community-api/remedies');
+        const response = await fetch('https://vaidyavan-app.onrender.com/community-api/remedies');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -55,7 +55,7 @@ const RemedySharing = () => {
     };
     try {
       // Post new remedy to backend
-      await fetch('http://localhost:4000/community-api/remedies', {
+      await fetch('https://vaidyavan-app.onrender.com/community-api/remedies', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const RemedySharing = () => {
       });
 
       // Re-fetch remedies to get the updated list
-      const response = await fetch('http://localhost:4000/community-api/remedies');
+      const response = await fetch('https://vaidyavan-app.onrender.com/community-api/remedies');
       if (!response.ok) {
         throw new Error('Failed to fetch remedies');
       }

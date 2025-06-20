@@ -16,7 +16,7 @@ function OrderPlant() {
   useEffect(() => {
     const fetchPlantDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/plant-api/order-plant/${name}`);
+        const response = await fetch(`https://vaidyavan-app.onrender.com/plant-api/order-plant/${name}`);
         if (!response.ok) {
           throw new Error(`Error fetching plant details: ${response.statusText}`);
         }

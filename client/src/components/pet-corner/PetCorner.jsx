@@ -14,7 +14,7 @@ const PetCorner = () => {
     const fetchPetConcerns = async () => {
       try {
         const response = await fetch(
-          "http://localhost:4000/pet-api/pet-concerns"
+          "https://vaidyavan-app.onrender.com/pet-api/pet-concerns"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch pet concerns data");

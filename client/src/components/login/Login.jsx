@@ -18,7 +18,7 @@ const LoginPage = ({ isAuthenticated, setIsAuthenticated, setUserID }) => {
     setIsSubmitting(true);
     setError('');
     try {
-      const loginResponse = await fetch(`http://localhost:4000/user-api/login`, {
+      const loginResponse = await fetch(`https://vaidyavan-app.onrender.com/user-api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),
@@ -29,7 +29,7 @@ const LoginPage = ({ isAuthenticated, setIsAuthenticated, setUserID }) => {
         throw new Error(errorData.message || 'Login failed');
       }
 
-      const userResponse = await fetch(`http://localhost:4000/user-api/login`, {
+      const userResponse = await fetch(`https://vaidyavan-app.onrender.com/user-api/login`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -51,7 +51,7 @@ const Register = () => {
     const { confirmPassword, ...formData } = formState;
 
     try {
-      const response = await axios.post(`http://localhost:4000/user-api/user`, formData);
+      const response = await axios.post(`https://vaidyavan-app.onrender.com/user-api/user`, formData);
       console.log('Response from server:', response.data);
       navigate('/login');
     } catch (error) {

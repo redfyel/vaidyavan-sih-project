@@ -20,7 +20,7 @@ function Learn() {
   useEffect(() => {
     async function fetchPlants() {
       try {
-        const res = await fetch('http://localhost:4000/plant-api/plants');
+        const res = await fetch('https://vaidyavan-app.onrender.com/plant-api/plants');
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }
