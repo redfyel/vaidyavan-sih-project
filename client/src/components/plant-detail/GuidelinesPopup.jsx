@@ -1,5 +1,5 @@
 import React from 'react';
-import './GuidelinesPopup.css';
+import './Guidelinespopup.css';
 
 function GuidelinesPopup({ onClose }) {
   return (
