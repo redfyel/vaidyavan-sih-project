@@ -9,7 +9,8 @@ import { MdOutlineForum } from "react-icons/md";
 import { HiMiniPencilSquare } from "react-icons/hi2";
 import { FaTv } from "react-icons/fa";
 import { MdOutlinePets } from "react-icons/md";
-import './Header.css'; // Ensure to import the CSS file
+import Logo from '../../assets/images/vaidyavan-logo.png';
+import './Header.css';
 
 function Header() {
   const [userLoginStatus, setUserLoginStatus] = useState(false);
@@ -19,7 +20,7 @@ function Header() {
     <div className="header">
       <div className="logo-container">
         <Link to="/">
-          <img src="src/assets/images/vaidyavan-logo.png" alt="Logo Unavailable currently" className='logo-img' />
+          <img src={Logo} alt="Logo Unavailable currently" className='logo-img' />
         </Link>
         <h1 className="brand-name">VaidyaVan</h1>
       </div>
