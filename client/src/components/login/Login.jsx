@@ -155,7 +155,7 @@ const LoginPage = ({ isAuthenticated, setIsAuthenticated, setUserID }) => {
         {/* Signup Link */}
         <div className="text-center mt-4">
           <small>
-            New to Leafy?{' '}
+            New to VaidyaVan?{' '}
             <Link className="text-primary" to="/signup" aria-label="Sign Up">
               Sign Up Now
             </Link>
