@@ -8,6 +8,8 @@ app.use(cors({
   origin: ['http://localhost:5173','https://vaidyavan.vercel.app' ,'https://vaidyavan-app.onrender.com']
 }));
 
+  origin: ['http://localhost:5173', 'https://vaidyavan-app.onrender.com', 'https://vaidyavan.vercel.app']
+}))
 
 //import environment varaibles 
 require('dotenv').config() //process.env.PORT
