@@ -8,6 +8,7 @@ app.use(cors({
   origin: ['http://localhost:5173','https://vaidyavan.vercel.app' ,'https://vaidyavan-app.onrender.com']
 }));
 
+
 //import environment varaibles 
 require('dotenv').config() //process.env.PORT
 //import MongoClient

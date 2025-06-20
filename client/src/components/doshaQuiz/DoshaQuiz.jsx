@@ -10,7 +10,7 @@ import video1 from '../../assets/videos/v6.mp4';
 import audioFile from '../../assets/audio/a1.mp3';
 
 
-const OrderHerbs = () => {
+const DoshaQuiz = () => {
   const [quizStarted, setQuizStarted] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -353,4 +353,4 @@ const OrderHerbs = () => {
   );
 };
 
-export default OrderHerbs;
+export default DoshaQuiz;
